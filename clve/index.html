@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="../assets/keye-logo.png">
+<title>Closed-Loop Evaluation of Video Understanding | Keye Video Team</title>
+<meta name="description" content="CLVE: Closed-Loop Evaluation of Video Understanding by Keye Video Team.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400..700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body data-sidenav>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">
+      <img src="../assets/keye-logo.png" alt="Keye Video logo" width="32" height="32">
+      <span>Keye Video Team</span>
+    </a>
+    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span class="burger"></span></button>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="../index.html">Home</a>
+      <a class="active" href="#overview">Overview</a>
+      <a href="#findings">Findings</a>
+      <a href="#results">Results</a>
+      <a href="#citation">Citation</a>
+      <a class="nav-cta" href="https://github.com/Keye-Video" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="ar-page">
+  <header class="ar-head" id="main" tabindex="-1">
+    <div class="ar-crumb">
+      <b><a href="../index.html">Keye Video Team</a></b><span>›</span><span>CLVE</span>
+    </div>
+    <div class="ar-eyebrow">
+      <span>Nov 24, 2026</span>
+      <span class="badge badge-solid">Latest</span>
+      <span class="badge badge-soft">Evaluation</span>
+      <div class="ar-lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+      </div>
+    </div>
+
+    <h1>
+      <span lang="en">Closed-Loop Evaluation of Video Understanding</span>
+      <span lang="zh">闭环视频理解评测（CLVE）</span>
+    </h1>
+    <p class="ar-standfirst" lang="en">An evaluator watches the same raw video as the candidate and adapts visual-only follow-up questions across three levels—eliminating timestamp leakage, audio shortcuts, and numeric judge midpoint collapse.</p>
+    <p class="ar-standfirst" lang="zh">评测器与候选模型同步观看原始视频，并依据前轮回答动态生成三级纯视觉追问，系统性解决时间戳泄露、音频捷径与数值打分器中点坍缩三大问题。</p>
+
+    <div class="ar-authors-block">
+      <div class="ar-affiliation"><strong>Keye Video Team</strong></div>
+    </div>
+
+    <div class="ar-actions">
+      <a class="pill-btn solid" href="https://github.com/Keye-Video" target="_blank" rel="noopener">Code (Coming Soon)</a>
+      <a class="pill-btn" href="#results">Main Results</a>
+      <a class="pill-btn" href="#citation">BibTeX</a>
+    </div>
+  </header>
+
+  <nav class="ar-toc" aria-label="Contents">
+    <ol>
+      <li><a href="#overview"><span lang="en">Overview</span><span lang="zh">概览</span></a></li>
+      <li><a href="#abstract"><span lang="en">Abstract</span><span lang="zh">摘要</span></a></li>
+      <li><a href="#findings"><span lang="en">Key Findings</span><span lang="zh">核心发现</span></a></li>
+      <li><a href="#results"><span lang="en">Main Results</span><span lang="zh">主实验结果</span></a></li>
+      <li><a href="#citation"><span lang="en">Citation</span><span lang="zh">引用</span></a></li>
+    </ol>
+  </nav>
+
+  <div class="ar-main">
+    <aside class="ar-side-rail" aria-label="Contents">
+      <div class="ar-side">
+        <div class="ar-side-title"><span lang="en">Contents</span><span lang="zh">目录</span></div>
+        <ol>
+          <li><a href="#overview"><span lang="en">Overview</span><span lang="zh">概览</span></a></li>
+          <li><a href="#abstract"><span lang="en">Abstract</span><span lang="zh">摘要</span></a></li>
+          <li><a href="#findings"><span lang="en">Key Findings</span><span lang="zh">核心发现</span></a></li>
+          <li><a href="#results"><span lang="en">Main Results</span><span lang="zh">主实验结果</span></a></li>
+          <li><a href="#citation"><span lang="en">Citation</span><span lang="zh">引用</span></a></li>
+        </ol>
+      </div>
+    </aside>
+
+    <figure class="ar-fig" id="overview">
+      <div class="ar-fig-frame" data-zoom>
+        <img src="../assets/figs/clve_overview.png" alt="CLVE three-level closed-loop evaluation overview">
+      </div>
+      <figcaption>
+        <span lang="en"><strong>Figure 1.</strong> Overview of Closed-Loop Video Evaluation (CLVE). Every thread starts from a shared visual opening question and escalates across three difficulty levels with rule-based timestamp filtering and categorical verdicts.</span>
+        <span lang="zh"><strong>图 1.</strong> 闭环视频理解评测协议（CLVE）总览：每个会话从共享的纯视觉首题出发，沿三个递增难度层级追问，并结合规则时间戳过滤与分类裁决。</span>
+      </figcaption>
+    </figure>
+
+    <div class="stat-strip">
+      <div class="stat-box"><b>94% → 0.08%</b><span lang="en">Timestamp leakage in follow-ups</span><span lang="zh">追问中的时间戳泄露率</span></div>
+      <div class="stat-box"><b>+15.0 pts</b><span lang="en">Tool gain on Qwen 3.8 Flash (42.6 → 57.5)</span><span lang="zh">工具调用给 Qwen 3.8 Flash 带来的提升</span></div>
+      <div class="stat-box"><b>1/9 tokens</b><span lang="en">Median thinking tokens via categorical judge</span><span lang="zh">分类裁决器将思考 token 降至约 1/9</span></div>
+    </div>
+
+    <section id="abstract">
+      <h2><span lang="en">Abstract</span><span lang="zh">摘要</span></h2>
+      <p lang="en">Video understanding benchmarks fix their questions and answer options in advance. Such open-loop tests cannot tell whether a model answered from what it saw or from cues in the options, the text, or the audio, and once scores saturate they no longer show where perception fails. We study closed-loop evaluation instead: an evaluator model watches the same raw video as the candidate model and chooses each question based on the previous answers.</p>
+      <p lang="en">A naive version of this setup fails in three ways: the evaluator reveals timestamps in follow-up questions, audio-related questions let omni-modal models compensate for weak vision, and a numeric LLM judge pushes most scores to the midpoint. We present <strong>CLVE</strong>, a protocol addressing all three issues. Every thread begins with a shared visual question and moves through three escalating levels; threads stop at the first incomplete answer, timestamps are blocked by a rule-based filter, and categorical verdicts are converted to scores afterwards. The evaluator supports both black-box questioning (answers only) and white-box questioning (also seeing uncertain passages in the candidate's reasoning trace), while grading always uses the answers alone.</p>
+      <p lang="zh">传统视频理解基准预先固定题目与选项，难以区分模型是真正看到了画面，还是依赖选项、文本或音频捷径，且分数饱和后无法定位感知失效点。我们提出闭环视频理解评测协议 <strong>CLVE</strong>：评测器与候选模型共同观看原始视频，并基于前轮回答动态发起三级纯视觉追问。针对朴素闭环评测暴露出的时间戳泄露（94%）、音频捷径以及数值打分器中点坍缩三大问题，CLVE 引入纯视觉约束、规则时间戳过滤器与分类裁决机制，并支持黑盒与白盒两种追问模式。</p>
+    </section>
+
+    <section id="findings">
+      <h2><span lang="en">Key Findings</span><span lang="zh">核心发现</span></h2>
+      <ol class="ar-findings">
+        <li>
+          <div>
+            <strong class="finding-head"><span lang="en">Closed-loop evaluation widens separation where first-turn scores cluster</span><span lang="zh">闭环追问显著拉开模型区分度</span></strong>
+            <span lang="en">On Video-Index 1.1 across six black-box configurations, first-turn scores sit between 63 and 82, whereas CLVE scores span 35.2 to 57.5 (a 22-point spread). Only Qwen 3.8 Flash with tools passes Level 3 on more than 9% of threads (25.5%).</span>
+            <span lang="zh">在 Video-Index 1.1 的六组黑盒配置中，首轮得分集中在 63–82，而 CLVE 总分拉开至 35.2–57.5（跨度 22 分）；仅开启工具的 Qwen 3.8 Flash 在 Level 3 通过率超过 9%（达 25.5%）。</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong class="finding-head"><span lang="en">Categorical verdicts eliminate midpoint errors at 1/9 the thinking cost</span><span lang="zh">分类裁决彻底消除中点偏差，且思考开销降至 1/9</span></strong>
+            <span lang="en">Removing numeric scales from the judge prompt drops midpoint errors from 32%–85% to 0/40 while reducing median thinking tokens from ~7,900 to 882.</span>
+            <span lang="zh">去除数值量表、改用“未达标 / 部分达标 / 完全达标”分类裁决后，中点误判降至 0/40，同时单次裁决中位思考 token 从约 7,900 降至 882。</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong class="finding-head"><span lang="en">Visual-only rules expose audio shortcuts; white-box questioning probes uncertain reasoning</span><span lang="zh">纯视觉规则剔除音频补偿，白盒追问揭示脆弱推理</span></strong>
+            <span lang="en">Excluding audio cues drops Qwen 3.8 Omni 20 points behind Qwen 3.8 Flash (37.6 vs. 57.5). White-box follow-ups targeting uncertain CoT passages lower conditional Level-3 pass rates P(L3|L1) across all three models.</span>
+            <span lang="zh">排除音频线索后，Qwen 3.8 Omni 落后 Qwen 3.8 Flash 20 分（37.6 vs. 57.5）；针对推理不确定片段发起白盒质疑后，全部三个模型的条件三级通过率 P(L3|L1) 均下降。</span>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="results">
+      <h2><span lang="en">Main Results on Video-Index 1.1</span><span lang="zh">Video-Index 1.1 主实验结果</span></h2>
+      <p lang="en">Results on the 82 paired videos completed by all nine configurations (738 evaluations, Gemini 3.8 Flash evaluator). BB and WB denote black-box and white-box questioning.</p>
+      <p lang="zh">全部 9 组配置共同完成的 82 段配对视频结果（738 次完整评测，Gemini 3.8 Flash 评测器）。BB / WB 分别表示黑盒与白盒追问。</p>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Candidate Model</th>
+              <th>Regime</th>
+              <th class="num">Tool Use</th>
+              <th class="num">L1 1st</th>
+              <th class="num">Video Score</th>
+              <th class="num">L1 / L2 / L3 (%)</th>
+              <th class="num">P(L3|L1)</th>
+              <th class="num">Depth</th>
+              <th class="num">Cave ↓</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="hl"><td>Qwen 3.8 Flash Chat</td><td>+Tools (BB)</td><td class="num">90.2% (3.44)</td><td class="num">82.2</td><td class="num">57.5</td><td class="num">63.8 / 47.7 / 25.5</td><td class="num">40.0%</td><td class="num">1.37</td><td class="num">5.1%</td></tr>
+            <tr><td>Qwen 3.8 Flash Chat</td><td>Native (BB)</td><td class="num">0.0% (0.00)</td><td class="num">68.6</td><td class="num">42.6</td><td class="num">47.8 / 22.4 / 7.5</td><td class="num">15.6%</td><td class="num">0.78</td><td class="num">1.5%</td></tr>
+            <tr><td>Qwen 3.8 Flash Chat</td><td>+Tools (WB)</td><td class="num">82.9% (2.87)</td><td class="num">72.3</td><td class="num">45.4</td><td class="num">50.3 / 25.5 / 14.6</td><td class="num">29.1%</td><td class="num">0.90</td><td class="num">4.1%</td></tr>
+            <tr><td>Qwen 3.8 Omni Flash</td><td>+Tools (BB)</td><td class="num">75.6% (2.22)</td><td class="num">68.7</td><td class="num">37.6</td><td class="num">42.4 / 21.5 / 7.6</td><td class="num">17.9%</td><td class="num">0.72</td><td class="num">3.1%</td></tr>
+            <tr><td>Qwen 3.8 Omni Flash</td><td>Native (BB)</td><td class="num">0.0% (0.00)</td><td class="num">63.3</td><td class="num">35.6</td><td class="num">38.9 / 14.2 / 4.3</td><td class="num">11.1%</td><td class="num">0.57</td><td class="num">1.8%</td></tr>
+            <tr><td>Qwen 3.8 Omni Flash</td><td>+Tools (WB)</td><td class="num">82.9% (2.57)</td><td class="num">71.9</td><td class="num">43.6</td><td class="num">51.0 / 25.2 / 9.0</td><td class="num">17.7%</td><td class="num">0.85</td><td class="num">1.4%</td></tr>
+            <tr><td>Qwen 3.7 Flash</td><td>+Tools (BB)</td><td class="num">15.9% (0.52)</td><td class="num">67.5</td><td class="num">37.6</td><td class="num">39.4 / 15.6 / 8.8</td><td class="num">22.2%</td><td class="num">0.64</td><td class="num">9.4%</td></tr>
+            <tr><td>Qwen 3.7 Flash</td><td>Native (BB)</td><td class="num">0.0% (0.00)</td><td class="num">66.5</td><td class="num">35.2</td><td class="num">36.7 / 15.2 / 7.0</td><td class="num">19.0%</td><td class="num">0.59</td><td class="num">12.5%</td></tr>
+            <tr><td>Qwen 3.7 Flash</td><td>+Tools (WB)</td><td class="num">18.3% (0.73)</td><td class="num">61.8</td><td class="num">27.9</td><td class="num">31.8 / 11.5 / 4.5</td><td class="num">14.0%</td><td class="num">0.48</td><td class="num">17.0%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="citation">
+      <h2><span lang="en">Citation</span><span lang="zh">引用格式</span></h2>
+      <pre><code>@article{zhang2026clve,
+  title   = {Closed-Loop Evaluation of Video Understanding},
+  author  = {Keye Video Team},
+  journal = {arXiv preprint},
+  year    = {2026},
+  url     = {https://keye-video.github.io/clve/}
+}</code></pre>
+    </section>
+  </div>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand"><img src="../assets/keye-logo.png" alt="Keye Video logo" width="28" height="28"><span>Keye Video Team</span></div>
+      <p class="foot-desc">Research on multimodal video understanding, native architectures, agentic harnesses, and evaluation benchmarks.</p>
+    </div>
+    <div class="foot-col"><h4>Papers</h4><ul><li><a href="../clve/index.html">CLVE</a></li><li><a href="../early-in-fusion/index.html">Early In-Fusion</a></li><li><a href="../videoace/index.html">VideoACE</a></li><li><a href="../rethinking-video-agents/index.html">Rethinking Video Agents</a></li><li><a href="../videonexus/index.html">VideoNexus</a></li></ul></div>
+    <div class="foot-col"><h4>Links</h4><ul><li><a href="../index.html">Team Homepage</a></li><li><a href="https://github.com/Keye-Video" target="_blank" rel="noopener">GitHub Organization</a></li></ul></div>
+    <div class="foot-col"><h4>Sections</h4><ul><li><a href="#overview">Overview</a></li><li><a href="#results">Results</a></li><li><a href="#citation">Citation</a></li></ul></div>
+  </div>
+  <div class="foot-bottom"><span>© 2026 Keye Video Team.</span><span>keye-video.github.io/clve/</span></div>
+</footer>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>

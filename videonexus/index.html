@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="../assets/keye-logo.png">
+<title>VideoNexus: Video Perception Beyond the Reasoning Context | Keye Video Team</title>
+<meta name="description" content="VideoNexus (arXiv:2611.21392v1): Training-free decoupling of detailed audio-video perception from evidence-driven planning and reasoning.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400..700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body data-sidenav>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">
+      <img src="../assets/keye-logo.png" alt="Keye Video logo" width="32" height="32">
+      <span>Keye Video Team</span>
+    </a>
+    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span class="burger"></span></button>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="../index.html">Home</a>
+      <a class="active" href="#overview">Overview</a>
+      <a href="#findings">Highlights</a>
+      <a href="#citation">Citation</a>
+      <a class="nav-cta" href="https://arxiv.org/abs/2611.21392v1" target="_blank" rel="noopener">arXiv</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="ar-page">
+  <header class="ar-head" id="main" tabindex="-1">
+    <div class="ar-crumb"><b><a href="../index.html">Keye Video Team</a></b><span>›</span><span>VideoNexus</span></div>
+    <div class="ar-eyebrow">
+      <span>Nov 16, 2026</span>
+      <span class="badge">arXiv:2611.21392v1</span>
+      <span class="badge badge-soft">Video Agents</span>
+      <div class="ar-lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+      </div>
+    </div>
+
+    <h1>
+      <span lang="en">VideoNexus: Video Perception Beyond the Reasoning Context</span>
+      <span lang="zh">VideoNexus：将视频感知从推理上下文中解耦</span>
+    </h1>
+    <p class="ar-standfirst" lang="en">A training-free framework that delegates native audio-video inspection to isolated perception sub-agents and exchanges compact, temporally grounded evidence with the planner.</p>
+    <p class="ar-standfirst" lang="zh">免训练的长视频智能体框架：将原生音视频细节感知委派给独立上下文的感知子智能体，仅向规划器回传紧凑且带时间戳锚定的结构化证据。</p>
+
+    <div class="ar-authors-block">
+      <div class="ar-affiliation"><strong>Keye Video Team</strong></div>
+    </div>
+
+    <div class="ar-actions">
+      <a class="pill-btn solid" href="https://arxiv.org/abs/2611.21392v1" target="_blank" rel="noopener">arXiv Paper →</a>
+      <a class="pill-btn primary" href="https://arxiv.org/pdf/2611.21392v1" target="_blank" rel="noopener">PDF</a>
+      <a class="pill-btn" href="https://github.com/Keye-Video" target="_blank" rel="noopener">GitHub</a>
+      <a class="pill-btn" href="#citation">BibTeX</a>
+    </div>
+  </header>
+
+  <nav class="ar-toc" aria-label="Contents">
+    <ol>
+      <li><a href="#overview"><span lang="en">Architecture</span><span lang="zh">架构</span></a></li>
+      <li><a href="#abstract"><span lang="en">Abstract</span><span lang="zh">摘要</span></a></li>
+      <li><a href="#findings"><span lang="en">Highlights</span><span lang="zh">核心亮点</span></a></li>
+      <li><a href="#citation"><span lang="en">Citation</span><span lang="zh">引用</span></a></li>
+    </ol>
+  </nav>
+
+  <div class="ar-main">
+    <aside class="ar-side-rail" aria-label="Contents">
+      <div class="ar-side">
+        <div class="ar-side-title"><span lang="en">Contents</span><span lang="zh">目录</span></div>
+        <ol>
+          <li><a href="#overview"><span lang="en">Architecture</span><span lang="zh">架构</span></a></li>
+          <li><a href="#abstract"><span lang="en">Abstract</span><span lang="zh">摘要</span></a></li>
+          <li><a href="#findings"><span lang="en">Highlights</span><span lang="zh">核心亮点</span></a></li>
+          <li><a href="#citation"><span lang="en">Citation</span><span lang="zh">引用</span></a></li>
+        </ol>
+      </div>
+    </aside>
+
+    <figure class="ar-fig" id="overview">
+      <div class="ar-fig-frame" data-zoom>
+        <img src="../assets/figs/videonexus_overview.svg" alt="VideoNexus perception-reasoning separation diagram">
+      </div>
+      <figcaption>
+        <span lang="en"><strong>Figure 1.</strong> VideoNexus decouples planning from raw visual perception: the planner controls where and how densely to look, while perception sub-agents inspect native audio-video streams in independent contexts and return compact grounded evidence.</span>
+        <span lang="zh"><strong>图 1.</strong> VideoNexus 架构示意：规划器决定观测区间与采样密度，感知子智能体在隔离上下文中处理原生音视频流并返回紧凑的时序锚定证据。</span>
+      </figcaption>
+    </figure>
+
+    <div class="stat-strip">
+      <div class="stat-box"><b>88.6%</b><span lang="en">Full LVBench accuracy (Gemini 3.8 Flash)</span><span lang="zh">完整 LVBench 准确率（Gemini 3.8 Flash）</span></div>
+      <div class="stat-box"><b>44% cost</b><span lang="en">Measured API cost vs. built-in agentic mode</span><span lang="zh">相比内置 agentic 模式的实测 API 成本</span></div>
+      <div class="stat-box"><b>+8.5 pts</b><span lang="en">Gain over Video-GAIA ReAct harness (Kimi K3)</span><span lang="zh">Kimi K3 上超越 Video-GAIA ReAct 框架</span></div>
+    </div>
+
+    <section id="abstract">
+      <h2><span lang="en">Abstract</span><span lang="zh">摘要</span></h2>
+      <p lang="en">Understanding long videos requires locating evidence, resolving visual details, and integrating observations into an answer. Even when relevant evidence is present, performing these operations within long, dense visual sequences burdens both perception and reasoning. Video agents enable selective inspection, but returning frames to the planner still accumulates visual information in its reasoning context. Delegating perception reduces this burden, yet sparse sampling can miss decisive details, and per-frame descriptions can preserve context growth.</p>
+      <p lang="en">We introduce <strong>VideoNexus</strong>, a training-free framework that separates detailed video perception from evidence-driven planning and reasoning. The planner controls where to inspect, what to resolve, and how densely to sample. Perception sub-agents process native audio-video in independent contexts and return compact, temporally grounded evidence for iterative search and verification.</p>
+      <p lang="zh">长视频理解需要同时完成证据定位、细节辨识与跨片段整合。现有视频智能体虽支持选择性查看，但将原始帧不断回传至规划器仍会造成推理上下文膨胀。我们提出免训练框架 <strong>VideoNexus</strong>，将细粒度音视频感知与基于证据的规划推理彻底解耦：由规划器动态决策观测区间与帧率，感知子智能体在独立上下文中原生处理音视频并回传紧凑的时序锚定证据。</p>
+    </section>
+
+    <section id="findings">
+      <h2><span lang="en">Key Highlights</span><span lang="zh">核心亮点</span></h2>
+      <ol class="ar-findings">
+        <li>
+          <div>
+            <strong class="finding-head"><span lang="en">88.6% accuracy on full LVBench at 44% of built-in agentic API cost</span><span lang="zh">完整 LVBench 达 88.6%，实测 API 成本仅 44%</span></strong>
+            <span lang="en">Using Gemini 3.8 Flash for both planning and perception, VideoNexus exceeds same-backbone static ingestion by +3.6 points and built-in agentic processing by +1.1 points while slashing measured API cost to 44%.</span>
+            <span lang="zh">基于 Gemini 3.8 Flash，VideoNexus 在完整 LVBench 上超越同底座静态输入 3.6 分、超越内置 agentic 模式 1.1 分，同时实测 API 成本仅为后者的 44%。</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong class="finding-head"><span lang="en">+8.5 points over Video-GAIA ReAct harness with Kimi K3</span><span lang="zh">在 Kimi K3 底座上超越 Video-GAIA ReAct 8.5 分</span></strong>
+            <span lang="en">Compact evidence exchange generalizes cleanly across model families, outperforming official ReAct-style video harnesses while keeping the planner context lean.</span>
+            <span lang="zh">紧凑证据交换机制跨模型家族稳定泛化，在保持规划器上下文精简的同时大幅提升复杂视频任务准确率。</span>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="citation">
+      <h2><span lang="en">Citation</span><span lang="zh">引用格式</span></h2>
+      <pre><code>@article{long2026videonexus,
+  title   = {VideoNexus: Video Perception Beyond the Reasoning Context},
+  author  = {Keye Video Team},
+  journal = {arXiv preprint arXiv:2611.21392},
+  year    = {2026},
+  url     = {https://arxiv.org/abs/2611.21392v1}
+}</code></pre>
+    </section>
+  </div>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="foot-grid">
+    <div><div class="foot-brand"><img src="../assets/keye-logo.png" alt="Keye Video logo" width="28" height="28"><span>Keye Video Team</span></div><p class="foot-desc">Research on multimodal video understanding, native architectures, agentic harnesses, and evaluation benchmarks.</p></div>
+    <div class="foot-col"><h4>Papers</h4><ul><li><a href="../clve/index.html">CLVE</a></li><li><a href="../early-in-fusion/index.html">Early In-Fusion</a></li><li><a href="../videoace/index.html">VideoACE</a></li><li><a href="../rethinking-video-agents/index.html">Rethinking Video Agents</a></li><li><a href="../videonexus/index.html">VideoNexus</a></li></ul></div>
+    <div class="foot-col"><h4>Links</h4><ul><li><a href="../index.html">Team Homepage</a></li><li><a href="https://arxiv.org/abs/2611.21392v1" target="_blank" rel="noopener">arXiv:2611.21392</a></li><li><a href="https://github.com/Keye-Video" target="_blank" rel="noopener">GitHub Organization</a></li></ul></div>
+    <div class="foot-col"><h4>Sections</h4><ul><li><a href="#overview">Architecture</a></li><li><a href="#findings">Highlights</a></li><li><a href="#citation">Citation</a></li></ul></div>
+  </div>
+  <div class="foot-bottom"><span>© 2026 Keye Video Team.</span><span>keye-video.github.io/videonexus/</span></div>
+</footer>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>

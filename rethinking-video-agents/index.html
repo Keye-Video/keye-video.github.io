@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="../assets/keye-logo.png">
+<title>Rethinking Video Agents | Keye Video Team</title>
+<meta name="description" content="Rethinking Video Agents: When and Why Video Harnesses Work by Keye Video Team.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400..700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body data-sidenav>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">
+      <img src="../assets/keye-logo.png" alt="Keye Video logo" width="32" height="32">
+      <span>Keye Video Team</span>
+    </a>
+    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span class="burger"></span></button>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="../index.html">Home</a>
+      <a class="active" href="#overview">Overview</a>
+      <a href="#framework">Framework</a>
+      <a href="#results">Results</a>
+      <a href="#citation">Citation</a>
+      <a class="nav-cta" href="https://github.com/Keye-Video" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="ar-page">
+  <header class="ar-head" id="main" tabindex="-1">
+    <div class="ar-crumb"><b><a href="../index.html">Keye Video Team</a></b><span>›</span><span>Rethinking Video Agents</span></div>
+    <div class="ar-eyebrow">
+      <span>Nov 18, 2026</span>
+      <span class="badge badge-soft">Video Agents</span>
+      <div class="ar-lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+      </div>
+    </div>
+
+    <h1>
+      <span lang="en">Rethinking Video Agents: When and Why Video Harnesses Work</span>
+      <span lang="zh">重思视频智能体：视频 Harness 何时以及为何有效</span>
+    </h1>
+    <p class="ar-standfirst" lang="en">Using Video-Relook across models and benchmarks, we show that video harnesses succeed when opportunities for informative observation align with a model's ability to seek evidence and revise reliably.</p>
+    <p class="ar-standfirst" lang="zh">基于 Video-Relook 框架跨模型与跨任务实证分析，揭示视频 Harness 生效的关键在于“高信息量观测机会”与“模型证据获取及可靠修正能力”的匹配。</p>
+
+    <div class="ar-authors-block">
+      <div class="ar-affiliation"><strong>Keye Video Team</strong></div>
+    </div>
+
+    <div class="ar-actions">
+      <a class="pill-btn solid" href="https://github.com/Keye-Video" target="_blank" rel="noopener">Code (Coming Soon)</a>
+      <a class="pill-btn" href="#results">Video-MME-v2 Results</a>
+      <a class="pill-btn" href="#citation">BibTeX</a>
+    </div>
+  </header>
+
+  <nav class="ar-toc" aria-label="Contents">
+    <ol>
+      <li><a href="#overview"><span lang="en">Overview</span><span lang="zh">概览</span></a></li>
+      <li><a href="#abstract"><span lang="en">Abstract</span><span lang="zh">摘要</span></a></li>
+      <li><a href="#framework"><span lang="en">Framework</span><span lang="zh">框架</span></a></li>
+      <li><a href="#results"><span lang="en">Results</span><span lang="zh">实验结果</span></a></li>
+      <li><a href="#citation"><span lang="en">Citation</span><span lang="zh">引用</span></a></li>
+    </ol>
+  </nav>
+
+  <div class="ar-main">
+    <aside class="ar-side-rail" aria-label="Contents">
+      <div class="ar-side">
+        <div class="ar-side-title"><span lang="en">Contents</span><span lang="zh">目录</span></div>
+        <ol>
+          <li><a href="#overview"><span lang="en">Overview</span><span lang="zh">概览</span></a></li>
+          <li><a href="#abstract"><span lang="en">Abstract</span><span lang="zh">摘要</span></a></li>
+          <li><a href="#framework"><span lang="en">Framework</span><span lang="zh">框架</span></a></li>
+          <li><a href="#results"><span lang="en">Results</span><span lang="zh">实验结果</span></a></li>
+          <li><a href="#citation"><span lang="en">Citation</span><span lang="zh">引用</span></a></li>
+        </ol>
+      </div>
+    </aside>
+
+    <figure class="ar-fig" id="overview">
+      <div class="ar-fig-frame" data-zoom>
+        <img src="../assets/figs/relook_teaser.png" alt="Rethinking Video Agents teaser overview">
+      </div>
+      <figcaption>
+        <span lang="en"><strong>Figure 1.</strong> Adaptive observation via Video-Relook yields substantial gains on fine-grained action understanding and Video-MME-v2, while exposing model- and task-dependent limits.</span>
+        <span lang="zh"><strong>图 1.</strong> Video-Relook 自适应观测在细粒度动作与 Video-MME-v2 上带来显著提升，同时揭示了其收益在不同模型与任务间的边界条件。</span>
+      </figcaption>
+    </figure>
+
+    <div class="stat-strip">
+      <div class="stat-box"><b>+14.2 pts</b><span lang="en">Peak gain on fine-grained actions (FastAct)</span><span lang="zh">细粒度动作基准最高增益</span></div>
+      <div class="stat-box"><b>+5.25 pts</b><span lang="en">Video-MME-v2 gain on Qwen 3.8 Flash</span><span lang="zh">Qwen 3.8 Flash 在 Video-MME-v2 上的提升</span></div>
+      <div class="stat-box"><b>+13.8 pts</b><span lang="en">Physical World Reasoning (Gemini 3.8 Flash)</span><span lang="zh">Gemini 3.8 Flash 物理世界推理提升</span></div>
+    </div>
+
+    <section id="abstract">
+      <h2><span lang="en">Abstract</span><span lang="zh">摘要</span></h2>
+      <p lang="en">Video understanding depends not only on how models reason about visual evidence, but also on which evidence they observe. Fixed observation policies determine this evidence in advance; agentic harnesses allow models to seek further observations as their understanding develops. Yet the ability to request observations does not ensure their effective use.</p>
+      <p lang="en">Using <strong>Video-Relook</strong> as an experimental framework, we let models adapt temporal and spatial observations from a common default configuration and analyze performance and interaction trajectories across models and tasks. Adaptive observation yields gains up to 14.2 points on fine-grained actions and extends to Video-MME-v2 (+3.78, +1.91, and +5.25 points on Gemini 3.8 Flash, Gemini 3.6 Flash, and Qwen 3.8 Flash), while revealing sharp cross-model and cross-task variations driven by error recovery, regression, and stopping behavior.</p>
+      <p lang="zh">视频理解不仅取决于模型如何推理，还取决于模型观测到了哪些视觉证据。我们基于 <strong>Video-Relook</strong> 框架让模型从统一默认配置出发自主调整时空观测，系统分析多模型与多任务下的收益与轨迹：自适应观测在细粒度动作上最高提升 14.2 分，并泛化至 Video-MME-v2；同时揭示 harness 的真实收益取决于观测机会与模型纠错、防退化及停止策略之间的协同。</p>
+    </section>
+
+    <section id="framework">
+      <h2><span lang="en">Video-Relook Framework</span><span lang="zh">Video-Relook 实验框架</span></h2>
+      <figure class="ar-fig">
+        <div class="ar-fig-frame" data-zoom>
+          <img src="../assets/figs/relook_framework.png" alt="Video-Relook adaptive observation framework">
+        </div>
+        <figcaption>
+          <span lang="en"><strong>Figure 2.</strong> Video-Relook starts from a shared 1 fps global overview and lets models iteratively request high-FPS local clips, selected frames, or spatial crops while recording full answer revision trajectories.</span>
+          <span lang="zh"><strong>图 2.</strong> Video-Relook 从统一的 1 fps 全局概览出发，支持模型按需调用局部高帧率片段、关键帧与空间裁剪，并全程追踪答案修正轨迹。</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="results">
+      <h2><span lang="en">Video-MME-v2 Results (Baseline → Harness)</span><span lang="zh">Video-MME-v2 实验结果（基线 → Harness）</span></h2>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Subset</th>
+              <th class="num">N</th>
+              <th class="num">Gemini 3.8 Flash</th>
+              <th class="num">Gemini 3.6 Flash</th>
+              <th class="num">Qwen 3.8 Flash</th>
+              <th class="num">Qwen 3.7 Flash</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="hl"><td>Overall</td><td class="num">3,200</td><td class="num">74.56 → 78.34</td><td class="num">70.84 → 72.75</td><td class="num">59.88 → 65.13</td><td class="num">53.16 → 53.16</td></tr>
+            <tr><td>Action &amp; Motion</td><td class="num">282</td><td class="num">54.96 → 59.22</td><td class="num">49.65 → 55.32</td><td class="num">41.49 → 50.71</td><td class="num">34.40 → 31.91</td></tr>
+            <tr><td>Physical World Reasoning</td><td class="num">298</td><td class="num">51.34 → 65.10</td><td class="num">45.97 → 45.64</td><td class="num">35.23 → 41.28</td><td class="num">29.53 → 26.85</td></tr>
+            <tr><td>Frame-Only</td><td class="num">575</td><td class="num">78.78 → 85.91</td><td class="num">78.78 → 81.39</td><td class="num">76.87 → 82.61</td><td class="num">73.04 → 72.70</td></tr>
+            <tr><td>Order</td><td class="num">343</td><td class="num">84.26 → 86.88</td><td class="num">82.22 → 82.22</td><td class="num">72.89 → 80.47</td><td class="num">72.59 → 70.55</td></tr>
+            <tr><td>Temporal Reasoning</td><td class="num">182</td><td class="num">79.12 → 80.77</td><td class="num">70.88 → 74.73</td><td class="num">68.13 → 67.58</td><td class="num">47.80 → 53.30</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="citation">
+      <h2><span lang="en">Citation</span><span lang="zh">引用格式</span></h2>
+      <pre><code>@article{zhang2026rethinking,
+  title   = {Rethinking Video Agents: When and Why Video Harnesses Work},
+  author  = {Keye Video Team},
+  journal = {arXiv preprint},
+  year    = {2026},
+  url     = {https://keye-video.github.io/rethinking-video-agents/}
+}</code></pre>
+    </section>
+  </div>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="foot-grid">
+    <div><div class="foot-brand"><img src="../assets/keye-logo.png" alt="Keye Video logo" width="28" height="28"><span>Keye Video Team</span></div><p class="foot-desc">Research on multimodal video understanding, native architectures, agentic harnesses, and evaluation benchmarks.</p></div>
+    <div class="foot-col"><h4>Papers</h4><ul><li><a href="../clve/index.html">CLVE</a></li><li><a href="../early-in-fusion/index.html">Early In-Fusion</a></li><li><a href="../videoace/index.html">VideoACE</a></li><li><a href="../rethinking-video-agents/index.html">Rethinking Video Agents</a></li><li><a href="../videonexus/index.html">VideoNexus</a></li></ul></div>
+    <div class="foot-col"><h4>Links</h4><ul><li><a href="../index.html">Team Homepage</a></li><li><a href="https://github.com/Keye-Video" target="_blank" rel="noopener">GitHub Organization</a></li></ul></div>
+    <div class="foot-col"><h4>Sections</h4><ul><li><a href="#overview">Overview</a></li><li><a href="#results">Results</a></li><li><a href="#citation">Citation</a></li></ul></div>
+  </div>
+  <div class="foot-bottom"><span>© 2026 Keye Video Team.</span><span>keye-video.github.io/rethinking-video-agents/</span></div>
+</footer>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>

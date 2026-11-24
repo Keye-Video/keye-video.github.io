@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="../assets/keye-logo.png">
+<title>VideoACE: Benchmarking Agentic Video Understanding | Keye Video Team</title>
+<meta name="description" content="VideoACE: Benchmarking Agentic Video Understanding through High-Frame-Rate Actions by Keye Video Team.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400..700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body data-sidenav>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">
+      <img src="../assets/keye-logo.png" alt="Keye Video logo" width="32" height="32">
+      <span>Keye Video Team</span>
+    </a>
+    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span class="burger"></span></button>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="../index.html">Home</a>
+      <a class="active" href="#overview">Overview</a>
+      <a href="#results">Results</a>
+      <a href="#qualitative">Examples</a>
+      <a href="#citation">Citation</a>
+      <a class="nav-cta" href="https://github.com/Keye-Video" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="ar-page">
+  <header class="ar-head" id="main" tabindex="-1">
+    <div class="ar-crumb"><b><a href="../index.html">Keye Video Team</a></b><span>›</span><span>VideoACE</span></div>
+    <div class="ar-eyebrow">
+      <span>Nov 18, 2026</span>
+      <span class="badge badge-soft">Benchmark</span>
+      <span class="badge badge-soft">Video Agents</span>
+      <div class="ar-lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+      </div>
+    </div>
+
+    <h1>
+      <span lang="en">VideoACE: Benchmarking Agentic Video Understanding through High-Frame-Rate Actions</span>
+      <span lang="zh">VideoACE：面向高帧率细粒度动作的智能体视频理解基准</span>
+    </h1>
+    <p class="ar-standfirst" lang="en">1,000 fine-grained action questions over 24 fps videos paired with video inspection tools and a leakage-screened User Simulator for sustained interactive evaluation.</p>
+    <p class="ar-standfirst" lang="zh">基于 24 fps 高帧率动作视频构建 1,000 道细粒度问答，结合视频观测工具与防泄露用户模拟器，系统评估模型在持续交互中的证据获取与修正能力。</p>
+
+    <div class="ar-authors-block">
+      <div class="ar-affiliation"><strong>Keye Video Team</strong></div>
+    </div>
+
+    <div class="ar-actions">
+      <a class="pill-btn solid" href="https://github.com/Keye-Video" target="_blank" rel="noopener">Code (Coming Soon)</a>
+      <a class="pill-btn" href="#results">Leaderboard</a>
+      <a class="pill-btn" href="#citation">BibTeX</a>
+    </div>
+  </header>
+
+  <nav class="ar-toc" aria-label="Contents">
+    <ol>
+      <li><a href="#overview"><span lang="en">Overview</span><span lang="zh">概览</span></a></li>
+      <li><a href="#abstract"><span lang="en">Abstract</span><span lang="zh">摘要</span></a></li>
+      <li><a href="#results"><span lang="en">Results</span><span lang="zh">实验结果</span></a></li>
+      <li><a href="#qualitative"><span lang="en">Qualitative</span><span lang="zh">案例分析</span></a></li>
+      <li><a href="#citation"><span lang="en">Citation</span><span lang="zh">引用</span></a></li>
+    </ol>
+  </nav>
+
+  <div class="ar-main">
+    <aside class="ar-side-rail" aria-label="Contents">
+      <div class="ar-side">
+        <div class="ar-side-title"><span lang="en">Contents</span><span lang="zh">目录</span></div>
+        <ol>
+          <li><a href="#overview"><span lang="en">Overview</span><span lang="zh">概览</span></a></li>
+          <li><a href="#abstract"><span lang="en">Abstract</span><span lang="zh">摘要</span></a></li>
+          <li><a href="#results"><span lang="en">Results</span><span lang="zh">实验结果</span></a></li>
+          <li><a href="#qualitative"><span lang="en">Qualitative</span><span lang="zh">案例分析</span></a></li>
+          <li><a href="#citation"><span lang="en">Citation</span><span lang="zh">引用</span></a></li>
+        </ol>
+      </div>
+    </aside>
+
+    <figure class="ar-fig" id="overview">
+      <div class="ar-fig-frame" data-zoom>
+        <img src="../assets/figs/videoace_teaser.png" alt="VideoACE interactive environment and fine-grained action example">
+      </div>
+      <figcaption>
+        <span lang="en"><strong>Figure 1.</strong> VideoACE pairs 24 fps action videos with video inspection tools (temporal zoom, frame selection, spatial crop) and a User Simulator providing leakage-screened hints.</span>
+        <span lang="zh"><strong>图 1.</strong> VideoACE 将 24 fps 细粒度动作视频与视频观测工具（局部高帧率截取、挑帧、空间放大）及防答案泄露用户模拟器相结合。</span>
+      </figcaption>
+    </figure>
+
+    <div class="stat-strip">
+      <div class="stat-box"><b>1,000 QA</b><span lang="en">6 fine-grained action categories (100 videos @ 24 fps)</span><span lang="zh">6 大细粒度动作类别（100 段 24 fps 视频）</span></div>
+      <div class="stat-box"><b>0.90 s</b><span lang="en">Median annotated temporal evidence window</span><span lang="zh">标注关键证据窗口中位时长</span></div>
+      <div class="stat-box"><b>+14.2 pts</b><span lang="en">Peak autonomous tool-use gain (Gemini 3.6 Flash)</span><span lang="zh">自主工具调用最高增益（Gemini 3.6 Flash）</span></div>
+    </div>
+
+    <section id="abstract">
+      <h2><span lang="en">Abstract</span><span lang="zh">摘要</span></h2>
+      <p lang="en">Agentic video understanding requires models to actively interact with video environments to gather evidence and form judgments. We introduce <strong>VideoACE</strong>, a benchmark focused on high-frame-rate action videos where rapid, subtle changes make targeted observation especially valuable. VideoACE comprises 1,000 multiple-choice questions across six categories of fine-grained action understanding over 100 videos retained at 24 fps, accompanied by temporal evidence annotations (median duration 0.90 s) and user hints screened for answer leakage.</p>
+      <p lang="en">Its evaluation environment combines video inspection tools with a User Simulator, enabling models to adjust temporal coverage, sampling density, and spatial detail, and to revisit evidence under simulated feedback. Across single-pass observation, autonomous tool use, and tool use with user feedback, evaluating five frontier models reveals sharp differences in how effectively they exploit interaction opportunities.</p>
+      <p lang="zh">智能体视频理解要求模型主动与视频环境交互以收集证据并修正判断。我们提出 <strong>VideoACE</strong> 基准，聚焦高帧率细粒度动作场景（100 段 24 fps 视频、1,000 道选择题、覆盖六类细粒度动作，关键证据中位时长 0.90 秒），配套视频观测工具与经防泄露筛查的用户模拟器，系统对比单次观测、自主工具调用与结合用户反馈三种模式下的模型表现。</p>
+    </section>
+
+    <section id="results">
+      <h2><span lang="en">Main Benchmark Results</span><span lang="zh">主榜实验结果</span></h2>
+      <p lang="en">All five models complete all 1,000 questions across single-pass, autonomous tool use, and tool use with simulated user feedback.</p>
+      <p lang="zh">全部五个模型在 1,000 道题上完成单次观测、自主工具调用以及结合用户反馈三种评测设置。</p>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th class="num">Single-Pass (%)</th>
+              <th class="num">Autonomous Tool Use (%)</th>
+              <th class="num">Tool Gain</th>
+              <th class="num">With Feedback (Final %)</th>
+              <th class="num">Feedback Gain</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="hl"><td>Gemini 4 Argon</td><td class="num">80.8</td><td class="num">88.1</td><td class="num">+7.3</td><td class="num">87.1</td><td class="num">+2.3</td></tr>
+            <tr><td>Gemini 3.8 Flash</td><td class="num">75.4</td><td class="num">86.4</td><td class="num">+11.0</td><td class="num">83.5</td><td class="num">+3.2</td></tr>
+            <tr><td>Gemini 3.6 Flash</td><td class="num">65.6</td><td class="num">79.8</td><td class="num">+14.2</td><td class="num">78.0</td><td class="num">+5.0</td></tr>
+            <tr><td>Qwen3.8-Flash</td><td class="num">63.5</td><td class="num">76.2</td><td class="num">+12.7</td><td class="num">73.2</td><td class="num">+4.8</td></tr>
+            <tr><td>Qwen3.7-Flash</td><td class="num">56.3</td><td class="num">59.3</td><td class="num">+3.0</td><td class="num">60.3</td><td class="num">+8.8</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="qualitative">
+      <h2><span lang="en">Qualitative Successes &amp; Regressions</span><span lang="zh">典型成功与退化案例</span></h2>
+      <figure class="ar-fig">
+        <div class="ar-fig-frame" data-zoom>
+          <img src="../assets/figs/videoace_qual.png" alt="VideoACE qualitative examples with real video frames">
+        </div>
+        <figcaption>
+          <span lang="en"><strong>Figure 2.</strong> Selected questions with source evidence frames and predictions from all five evaluated models, highlighting both universal recoveries and shared regressions.</span>
+          <span lang="zh"><strong>图 2.</strong> 典型细粒度动作题目及其关键证据帧与五个模型的预测对比，同时展示工具调用带来的修复与误改案例。</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="citation">
+      <h2><span lang="en">Citation</span><span lang="zh">引用格式</span></h2>
+      <pre><code>@article{zhang2026videoace,
+  title   = {VideoACE: Benchmarking Agentic Video Understanding through High-Frame-Rate Actions},
+  author  = {Keye Video Team},
+  journal = {arXiv preprint},
+  year    = {2026},
+  url     = {https://keye-video.github.io/videoace/}
+}</code></pre>
+    </section>
+  </div>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="foot-grid">
+    <div><div class="foot-brand"><img src="../assets/keye-logo.png" alt="Keye Video logo" width="28" height="28"><span>Keye Video Team</span></div><p class="foot-desc">Research on multimodal video understanding, native architectures, agentic harnesses, and evaluation benchmarks.</p></div>
+    <div class="foot-col"><h4>Papers</h4><ul><li><a href="../clve/index.html">CLVE</a></li><li><a href="../early-in-fusion/index.html">Early In-Fusion</a></li><li><a href="../videoace/index.html">VideoACE</a></li><li><a href="../rethinking-video-agents/index.html">Rethinking Video Agents</a></li><li><a href="../videonexus/index.html">VideoNexus</a></li></ul></div>
+    <div class="foot-col"><h4>Links</h4><ul><li><a href="../index.html">Team Homepage</a></li><li><a href="https://github.com/Keye-Video" target="_blank" rel="noopener">GitHub Organization</a></li></ul></div>
+    <div class="foot-col"><h4>Sections</h4><ul><li><a href="#overview">Overview</a></li><li><a href="#results">Results</a></li><li><a href="#citation">Citation</a></li></ul></div>
+  </div>
+  <div class="foot-bottom"><span>© 2026 Keye Video Team.</span><span>keye-video.github.io/videoace/</span></div>
+</footer>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>

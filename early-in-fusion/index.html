@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="../assets/keye-logo.png">
+<title>Video MLLMs Are Implicitly Early In-Fusion | Keye Video Team</title>
+<meta name="description" content="Architectural lessons for native video training via training-free prefix attention knockouts and temporal drift analysis.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400..700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body data-sidenav>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">
+      <img src="../assets/keye-logo.png" alt="Keye Video logo" width="32" height="32">
+      <span>Keye Video Team</span>
+    </a>
+    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span class="burger"></span></button>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="../index.html">Home</a>
+      <a class="active" href="#overview">Overview</a>
+      <a href="#findings">Findings</a>
+      <a href="#results">Results</a>
+      <a href="#citation">Citation</a>
+      <a class="nav-cta" href="https://github.com/Keye-Video" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="ar-page">
+  <header class="ar-head" id="main" tabindex="-1">
+    <div class="ar-crumb">
+      <b><a href="../index.html">Keye Video Team</a></b><span>›</span><span>Early In-Fusion</span>
+    </div>
+    <div class="ar-eyebrow">
+      <span>Nov 23, 2026</span>
+      <span class="badge badge-soft">Architecture</span>
+      <div class="ar-lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+      </div>
+    </div>
+
+    <h1>
+      <span lang="en">Video MLLMs Are Implicitly Early In-Fusion: Architectural Lessons for Native Video Training</span>
+      <span lang="zh">视频多模态大模型隐式呈现早期融合：原生视频训练的架构启示</span>
+    </h1>
+    <p class="ar-standfirst" lang="en">Training-free prefix attention knockouts across five Gemma 4 and Qwen3-VL models reveal that inter-frame temporal binding completes in the lower half of the decoder.</p>
+    <p class="ar-standfirst" lang="zh">通过对 Gemma 4 与 Qwen3-VL 系列共五个开源模型的免训练前缀注意力阻断与正反向帧漂移分析，发现跨帧时序绑定主要发生在解码器前半深度。</p>
+
+    <div class="ar-authors-block">
+      <div class="ar-affiliation"><strong>Keye Video Team</strong></div>
+    </div>
+
+    <div class="ar-actions">
+      <a class="pill-btn solid" href="https://github.com/Keye-Video" target="_blank" rel="noopener">Code (Coming Soon)</a>
+      <a class="pill-btn" href="#results">Main Results</a>
+      <a class="pill-btn" href="#citation">BibTeX</a>
+    </div>
+  </header>
+
+  <nav class="ar-toc" aria-label="Contents">
+    <ol>
+      <li><a href="#overview"><span lang="en">Protocol</span><span lang="zh">机制探针</span></a></li>
+      <li><a href="#abstract"><span lang="en">Abstract</span><span lang="zh">摘要</span></a></li>
+      <li><a href="#findings"><span lang="en">Key Findings</span><span lang="zh">核心发现</span></a></li>
+      <li><a href="#results"><span lang="en">Results</span><span lang="zh">实验结果</span></a></li>
+      <li><a href="#citation"><span lang="en">Citation</span><span lang="zh">引用</span></a></li>
+    </ol>
+  </nav>
+
+  <div class="ar-main">
+    <aside class="ar-side-rail" aria-label="Contents">
+      <div class="ar-side">
+        <div class="ar-side-title"><span lang="en">Contents</span><span lang="zh">目录</span></div>
+        <ol>
+          <li><a href="#overview"><span lang="en">Protocol</span><span lang="zh">机制探针</span></a></li>
+          <li><a href="#abstract"><span lang="en">Abstract</span><span lang="zh">摘要</span></a></li>
+          <li><a href="#findings"><span lang="en">Key Findings</span><span lang="zh">核心发现</span></a></li>
+          <li><a href="#results"><span lang="en">Results</span><span lang="zh">实验结果</span></a></li>
+          <li><a href="#citation"><span lang="en">Citation</span><span lang="zh">引用</span></a></li>
+        </ol>
+      </div>
+    </aside>
+
+    <figure class="ar-fig" id="overview">
+      <div class="ar-fig-frame" data-zoom>
+        <img src="../assets/figs/early_protocol.png" alt="Prefix attention knockout and temporal drift probing protocol">
+      </div>
+      <figcaption>
+        <span lang="en"><strong>Figure 1.</strong> Training-free prefix attention knockouts separating cross-frame and cross-modal attention across decoder layers, paired with forward-versus-reversed Matched-Frame Temporal Drift (MFTD).</span>
+        <span lang="zh"><strong>图 1.</strong> 免训练前缀注意力阻断探针，将解码器中的跨帧注意力与跨模态注意力解耦，并结合正反向播放的匹配帧时序漂移（MFTD）进行层级定位。</span>
+      </figcaption>
+    </figure>
+
+    <div class="stat-strip">
+      <div class="stat-box"><b>≤ 3.1 pts</b><span lang="en">Max DP change above half depth</span><span lang="zh">过半层深后阻断跨帧注意力的最大变化</span></div>
+      <div class="stat-box"><b>91.2%</b><span lang="en">Gemma 4 12B decision preservation (1/8 layers)</span><span lang="zh">无编码器 Gemma 4 12B 前 1/8 层联合隔离保留率</span></div>
+      <div class="stat-box"><b>10× jump</b><span lang="en">MFTD spike at Gemma 4 12B global layer ℓ=12</span><span lang="zh">混合滑窗架构在全局层 ℓ=12 出现 10 倍时序漂移跃升</span></div>
+    </div>
+
+    <section id="abstract">
+      <h2><span lang="en">Abstract</span><span lang="zh">摘要</span></h2>
+      <p lang="en">Most video multimodal large language models (MLLMs) process vision with a standalone encoder, or duplicate modality-specific parameters in every layer. On static images, recent work shows that placing dedicated visual capacity in early decoder layers (<em>early in-fusion</em>) is sufficient. Video further requires binding information across frames, leaving open whether early in-fusion extends to video.</p>
+      <p lang="en">We analyze five open-weights models from the Gemma 4 and Qwen3-VL families—spanning encoder-free, ViT-equipped, dense, and sparse MoE designs—using training-free prefix attention knockouts and forward-versus-reversed frame drift on Video-Index. Cross-frame attention matters only in the lower half of every model (blocking it beyond half depth changes decision preservation by at most 3.1 points). In encoder-free Gemma 4 12B, the first eighth of layers encodes each frame independently of other frames and of the prompt, retaining 91.2% of baseline decisions under joint isolation, whereas Qwen3-VL drops 16–23 points more under joint isolation than single-axis knockouts. In hybrid sliding-window decoders, temporal drift peaks sharply at global attention layers.</p>
+      <p lang="zh">主流视频多模态大模型往往依赖独立视觉编码器或在所有层复制模态参数。我们在 Gemma 4 与 Qwen3-VL 两个家族共五个开源模型（覆盖无编码器、ViT 编码器、稠密与稀疏 MoE）上开展机制分析，发现所有模型的跨帧注意力仅在前半层深起决定作用（过半深度后阻断决策保留率变化不超过 3.1 个百分点）；在无编码器 Gemma 4 12B 中，前 1/8 层可实现帧间与图文联合隔离并保留 91.2% 原始决策；而在混合滑窗解码器中，跨帧时序漂移集中爆发于全局注意力层。</p>
+    </section>
+
+    <section id="findings">
+      <h2><span lang="en">Key Findings</span><span lang="zh">核心发现</span></h2>
+      <ol class="ar-findings">
+        <li>
+          <div>
+            <strong class="finding-head"><span lang="en">Cross-frame attention saturates by half depth across all five architectures</span><span lang="zh">跨帧注意力在全部五种架构的前半层深即趋于饱和</span></strong>
+            <span lang="en">Decision preservation under cross-frame knockout decreases monotonically in layers 0–0.5L and changes by at most 3.1 points from 0.5L to L. On Gemma 4 26B-A4B, Temporal accuracy drops from 20.0% to 5.0% before the midpoint.</span>
+            <span lang="zh">阻断跨帧注意力后，决策保留率在 0–0.5L 区间单调下降，而在 0.5L–L 区间波动不超过 3.1 个百分点；Gemma 4 26B-A4B 的时序题准确率在中点之前即从 20.0% 降至 5.0%。</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong class="finding-head"><span lang="en">Joint early-layer isolation separates encoder-free vs. ViT-equipped models</span><span lang="zh">浅层联合隔离揭示无编码器与 ViT 模型的显著差异</span></strong>
+            <span lang="en">Encoder-free Gemma 4 12B retains 91.2% of decisions and 95.8% of accuracy under joint isolation of its first 6/48 layers, enabling prompt-independent frame caching; ViT-equipped Qwen3-VL 8B exhibits a super-additive drop to 60.0% at k/L=0.11.</span>
+            <span lang="zh">无编码器 Gemma 4 12B 在前 6/48 层联合隔离下保留 91.2% 决策与 95.8% 准确率，支持与提示词无关的帧级状态缓存；而带 ViT 的 Qwen3-VL 8B 在浅层联合隔离时出现超加性骤降。</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong class="finding-head"><span lang="en">Attention topology dictates where temporal drift emerges</span><span lang="zh">注意力拓扑决定了跨帧时序漂移的发生位置</span></strong>
+            <span lang="en">Full-attention Qwen3-VL shows a single smooth MFTD peak near mid-depth (ℓ/L=0.47–0.58), whereas hybrid sliding-window Gemma 4 exhibits sharp spikes strictly at global attention layers.</span>
+            <span lang="zh">全注意力 Qwen3-VL 的时序漂移在中层形成单峰（ℓ/L=0.47–0.58），而 5 局部 + 1 全局交错的 Gemma 4 则在全局注意力层出现阶跃式尖峰。</span>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="results">
+      <h2><span lang="en">Cross-Model Mechanistic Results</span><span lang="zh">跨模型机制分析主结果</span></h2>
+      <figure class="ar-fig">
+        <div class="ar-fig-frame" data-zoom>
+          <img src="../assets/figs/early_results.png" alt="Cross-model prefix knockout and MFTD results">
+        </div>
+        <figcaption>
+          <span lang="en"><strong>Figure 2.</strong> Prefix attention knockout curves and layer-wise Matched-Frame Temporal Drift (MFTD) across Gemma 4 and Qwen3-VL models on Video-Index.</span>
+          <span lang="zh"><strong>图 2.</strong> Gemma 4 与 Qwen3-VL 系列模型在 Video-Index 上的前缀注意力阻断曲线与逐层匹配帧时序漂移（MFTD）。</span>
+        </figcaption>
+      </figure>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Front-End</th>
+              <th class="num">L</th>
+              <th class="num">Base (%)</th>
+              <th class="num">DP_cf (k1/k0.5/L)</th>
+              <th class="num">DP_both (k1/L)</th>
+              <th class="num">Δ_rev (%)</th>
+              <th class="num">Peak MFTD (ℓ/L)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Gemma 4 E4B-it</td><td>~150M ViT + PLE</td><td class="num">42</td><td class="num">7.50</td><td class="num">95.0 / 76.2 / 76.9</td><td class="num">85.0 / 63.1</td><td class="num">−3.33</td><td class="num">0.0574 (0.57)</td></tr>
+            <tr class="hl"><td>Gemma 4 12B-it</td><td>Encoder-Free</td><td class="num">48</td><td class="num">15.00</td><td class="num">90.6 / 80.6 / 80.0</td><td class="num">91.2 / 53.1</td><td class="num">+4.17</td><td class="num">0.0297 (0.98)</td></tr>
+            <tr><td>Gemma 4 26B-A4B-it</td><td>MoE (4B active)</td><td class="num">30</td><td class="num">20.00</td><td class="num">81.9 / 68.1 / 68.1</td><td class="num">80.0 / 49.4</td><td class="num">+5.83</td><td class="num">0.0587 (0.63)</td></tr>
+            <tr><td>Qwen3-VL 8B</td><td>ViT + 3D-MRoPE</td><td class="num">36</td><td class="num">10.00</td><td class="num">90.6 / 76.9 / 78.1</td><td class="num">60.0 / 71.9</td><td class="num">+4.17</td><td class="num">0.0787 (0.47)</td></tr>
+            <tr><td>Qwen3-VL 30B-A3B</td><td>MoE (3B) + ViT</td><td class="num">48</td><td class="num">10.62</td><td class="num">89.4 / 77.5 / 74.4</td><td class="num">70.0 / 57.5</td><td class="num">+2.50</td><td class="num">0.0315 (0.58)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="citation">
+      <h2><span lang="en">Citation</span><span lang="zh">引用格式</span></h2>
+      <pre><code>@article{zhang2026earlyinfusion,
+  title   = {Video MLLMs Are Implicitly Early In-Fusion: Architectural Lessons for Native Video Training},
+  author  = {Keye Video Team},
+  journal = {arXiv preprint},
+  year    = {2026},
+  url     = {https://keye-video.github.io/early-in-fusion/}
+}</code></pre>
+    </section>
+  </div>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="foot-grid">
+    <div><div class="foot-brand"><img src="../assets/keye-logo.png" alt="Keye Video logo" width="28" height="28"><span>Keye Video Team</span></div><p class="foot-desc">Research on multimodal video understanding, native architectures, agentic harnesses, and evaluation benchmarks.</p></div>
+    <div class="foot-col"><h4>Papers</h4><ul><li><a href="../clve/index.html">CLVE</a></li><li><a href="../early-in-fusion/index.html">Early In-Fusion</a></li><li><a href="../videoace/index.html">VideoACE</a></li><li><a href="../rethinking-video-agents/index.html">Rethinking Video Agents</a></li><li><a href="../videonexus/index.html">VideoNexus</a></li></ul></div>
+    <div class="foot-col"><h4>Links</h4><ul><li><a href="../index.html">Team Homepage</a></li><li><a href="https://github.com/Keye-Video" target="_blank" rel="noopener">GitHub Organization</a></li></ul></div>
+    <div class="foot-col"><h4>Sections</h4><ul><li><a href="#overview">Protocol</a></li><li><a href="#results">Results</a></li><li><a href="#citation">Citation</a></li></ul></div>
+  </div>
+  <div class="foot-bottom"><span>© 2026 Keye Video Team.</span><span>keye-video.github.io/early-in-fusion/</span></div>
+</footer>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>
