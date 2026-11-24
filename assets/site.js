@@ -22,7 +22,7 @@
     });
   }
 
-  /* 2. 团队首页论文分类筛选 */
+  /* 2. 团队首页论文分类筛选（带交错入场动效） */
   var filterBar = document.querySelector('.filter-bar[data-pub-filter]');
   if (filterBar) {
     var paperCards = document.querySelectorAll('.paper-card[data-tags]');
@@ -32,13 +32,70 @@
         filterBar.querySelectorAll('button[data-tag]').forEach(function (b) {
           b.setAttribute('aria-pressed', String(b === btn));
         });
+        var shownIdx = 0;
         paperCards.forEach(function (card) {
           var tags = (card.getAttribute('data-tags') || '').split(/\s+/);
-          card.hidden = !(tag === 'all' || tags.indexOf(tag) !== -1);
+          var match = tag === 'all' || tags.indexOf(tag) !== -1;
+          card.hidden = !match;
+          card.classList.remove('filter-in');
+          if (match) {
+            void card.offsetWidth;
+            card.style.animationDelay = Math.min(shownIdx * 45, 220) + 'ms';
+            card.classList.add('filter-in');
+            shownIdx++;
+          }
         });
       });
     });
   }
+
+  /* 2b. 顶部阅读进度条 */
+  var bar = document.createElement('div');
+  bar.className = 'read-progress';
+  bar.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(bar);
+  var ticking = false;
+  function updateProgress() {
+    var doc = document.documentElement;
+    var max = doc.scrollHeight - window.innerHeight;
+    var pct = max > 0 ? Math.min(100, Math.max(0, (window.scrollY / max) * 100)) : 0;
+    bar.style.width = pct.toFixed(1) + '%';
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(updateProgress);
+    }
+  }, { passive: true });
+  updateProgress();
+
+  /* 2c. 滚动逐级浮现动效（Scroll Reveal） */
+  var revealTargets = document.querySelectorAll('.spotlight, .paper-card, .ar-fig, .stat-box, .ar-findings li');
+  if (revealTargets.length && 'IntersectionObserver' in window) {
+    var revIo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          revIo.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.06 });
+    revealTargets.forEach(function (el, idx) {
+      el.classList.add('reveal');
+      el.style.setProperty('--rd', ((idx % 3) * 55) + 'ms');
+      revIo.observe(el);
+    });
+  }
+
+  /* 2d. 鼠标跟随 Peach Fuzz 卡片微光 */
+  document.querySelectorAll('.spotlight, .paper-card').forEach(function (card) {
+    card.addEventListener('pointermove', function (ev) {
+      var rect = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (ev.clientX - rect.left).toFixed(0) + 'px');
+      card.style.setProperty('--my', (ev.clientY - rect.top).toFixed(0) + 'px');
+    }, { passive: true });
+  });
 
   /* 3. 中英双语切换 */
   var langBtns = document.querySelectorAll('.ar-lang button[data-lang]');
