@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="../assets/keye-logo.png">
+<title>VibeVideoAgent: Closing the Perceptual Loop for Code-Driven Video Generation | Keye Video Team</title>
+<meta name="description" content="VibeVideoAgent: Closing the Perceptual Loop for Code-Driven Video Generation by Keye Video Team.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400..700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body data-sidenav>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">
+      <img src="../assets/keye-logo.png" alt="Keye Video logo" width="32" height="32">
+      <span>Keye Video Team</span>
+    </a>
+    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span class="burger"></span></button>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="../index.html">Home</a>
+      <a class="active" href="#overview">Overview</a>
+      <a href="#architecture">Method</a>
+      <a href="#results">Results</a>
+      <a href="#trajectory">Trajectory</a>
+      <a href="#citation">Citation</a>
+      <a class="nav-cta" href="https://github.com/Keye-Video" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="ar-page">
+  <header class="ar-head" id="main" tabindex="-1">
+    <div class="ar-crumb">
+      <b><a href="../index.html">Keye Video Team</a></b><span>›</span><span>VibeVideoAgent</span>
+    </div>
+    <div class="ar-eyebrow">
+      <span>Nov 2026</span>
+      <span class="badge badge-solid">Latest</span>
+      <span class="badge badge-soft">Video Agents</span>
+      <span class="badge badge-soft">Code-Driven Video</span>
+      <div class="ar-lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+      </div>
+    </div>
+
+    <h1>
+      <span lang="en">VibeVideoAgent: Closing the Perceptual Loop for Code-Driven Video Generation</span>
+      <span lang="zh">VibeVideoAgent：闭合代码驱动视频生成的感知回路</span>
+    </h1>
+    <p class="ar-standfirst" lang="en">A training-free, rendering-stack-agnostic agent framework that decouples multimodal audiovisual perception from long-horizon coding—guiding iterative program repair across all 239 tasks of VibeVideoBench.</p>
+    <p class="ar-standfirst" lang="zh">免训练、与渲染技术栈无关的多模态编码智能体框架：在短暂即弃的解耦上下文中执行视听感知，并结合七个互补原语与阶段化制作协议，全面提升代码驱动视频生成的视听品质与细则合规度。</p>
+
+    <div class="ar-authors-block">
+      <div class="ar-affiliation"><strong>Keye Video Team</strong></div>
+    </div>
+
+    <div class="ar-actions">
+      <a class="pill-btn solid" href="https://github.com/Keye-Video" target="_blank" rel="noopener">Code (Coming Soon)</a>
+      <a class="pill-btn" href="#results">VibeVideoBench Results</a>
+      <a class="pill-btn" href="#citation">BibTeX</a>
+    </div>
+  </header>
+
+  <nav class="ar-toc" aria-label="Contents">
+    <ol>
+      <li><a href="#overview"><span lang="en">Overview</span><span lang="zh">概览</span></a></li>
+      <li><a href="#abstract"><span lang="en">Abstract</span><span lang="zh">摘要</span></a></li>
+      <li><a href="#architecture"><span lang="en">Architecture</span><span lang="zh">框架设计</span></a></li>
+      <li><a href="#results"><span lang="en">Results</span><span lang="zh">实验结果</span></a></li>
+      <li><a href="#trajectory"><span lang="en">Trajectory</span><span lang="zh">修复轨迹</span></a></li>
+      <li><a href="#citation"><span lang="en">Citation</span><span lang="zh">引用</span></a></li>
+    </ol>
+  </nav>
+
+  <div class="ar-main">
+    <aside class="ar-side-rail" aria-label="Contents">
+      <div class="ar-side">
+        <div class="ar-side-title"><span lang="en">Contents</span><span lang="zh">目录</span></div>
+        <ol>
+          <li><a href="#overview"><span lang="en">Overview</span><span lang="zh">概览</span></a></li>
+          <li><a href="#abstract"><span lang="en">Abstract</span><span lang="zh">摘要</span></a></li>
+          <li><a href="#architecture"><span lang="en">Architecture</span><span lang="zh">框架设计</span></a></li>
+          <li><a href="#results"><span lang="en">Results</span><span lang="zh">实验结果</span></a></li>
+          <li><a href="#trajectory"><span lang="en">Trajectory</span><span lang="zh">修复轨迹</span></a></li>
+          <li><a href="#citation"><span lang="en">Citation</span><span lang="zh">引用</span></a></li>
+        </ol>
+      </div>
+    </aside>
+
+    <figure class="ar-fig" id="overview">
+      <div class="ar-fig-frame" data-zoom>
+        <img src="../assets/figs/vibe_teaser.png" alt="Conventional coding agent vs VibeVideoAgent in-production perceptual loop">
+      </div>
+      <figcaption>
+        <span lang="en"><strong>Figure 1.</strong> Conventional coding agents vs. VibeVideoAgent's in-production perceptual loop. Ephemeral perception workers inspect previews and rough cuts outside the coding context and return compact, grounded Findings for surgical program repair.</span>
+        <span lang="zh"><strong>图 1.</strong> 传统编码智能体与 VibeVideoAgent 制作内感知回路对比：独立感知工作器在编码上下文之外审阅预览与粗剪，仅回传紧凑且带时空锚定的 Findings 以指导精准代码修复。</span>
+      </figcaption>
+    </figure>
+
+    <div class="stat-strip">
+      <div class="stat-box"><b>4.03 → 4.41</b><span lang="en">Dual-judge L3 quality on Opus 5.5 (+0.57 A–V sync)</span><span lang="zh">Opus 5.5 双裁判 L3 品质（音画同步 +0.57）</span></div>
+      <div class="stat-box"><b>99.15% L2</b><span lang="en">Rubric compliance &amp; 99.51% L1 spec on GPT-6 Astra</span><span lang="zh">GPT-6 Astra 细则通过率（L1 技术合规 99.51%）</span></div>
+      <div class="stat-box"><b>239 Tasks</b><span lang="en">Full VibeVideoBench across 3 frontier coding backbones</span><span lang="zh">VibeVideoBench 全量 239 任务 × 3 大前沿基座</span></div>
+    </div>
+
+    <section id="abstract">
+      <h2><span lang="en">Abstract</span><span lang="zh">摘要</span></h2>
+      <p lang="en">Code-driven video generation—often termed <em>Vibe Video</em>—enables multimodal coding agents to author deterministic typography, data visualizations, synchronized audio, and editable multi-shot scenes by writing executable rendering programs rather than sampling black-box pixel diffusion models. Yet clean program execution does not guarantee perceptual correctness: occluded layouts, off-target cameras, broken object interactions, and audio–visual desynchronization trigger no runtime exceptions. Feeding rendered video and audio directly into the coding session rapidly bloats the long-horizon programming context, whereas deferring critique until a full-resolution render finishes turns early design mistakes into costly whole-project rewrites.</p>
+      <p lang="en">We introduce <strong>VibeVideoAgent</strong>, a training-free, stack-agnostic agent framework that closes the perceptual loop throughout programmatic video production. VibeVideoAgent executes multimodal perception (Gemini 3.8 Flash) in short-lived, decoupled contexts alongside zero-cost local signal analysis, exposing a unified multi-clock draft representation through seven complementary primitives: coarse-to-fine asset and draft navigation, sourced requirement verification with enforced modality completeness, dual-clock differential comparison across reference assets and revised drafts, and deterministic stream probing. Evaluated across all 239 tasks of VibeVideoBench under strictly matched runtimes, VibeVideoAgent consistently improves holistic audiovisual quality (L3) across Claude Opus 5.5 (4.03 → 4.41, +0.57 on A–V sync), GPT-6 Astra (4.03 → 4.27, lifting L2 to 99.15% and L1 to 99.51%), and Claude Sonnet 5.5 (3.97 → 4.10, +0.40 on A–V sync).</p>
+      <p lang="zh">代码驱动视频生成（常被称为 <em>Vibe Video</em>）使多模态编码智能体能够通过编写可执行渲染程序来生成确定性排版、数据可视化、同步音频与可编辑多镜头场景。然而程序顺利执行并不代表感知正确：布局遮挡、镜头偏离目标、物体交互失效与音画不同步不会触发任何运行时异常；将渲染视频直接塞入编码会话会迅速挤占长程编程上下文，而等到全片渲染完成再审阅又会导致代价高昂的整体重写。</p>
+      <p lang="zh">本文提出 <strong>VibeVideoAgent</strong>——一种免训练、与渲染技术栈无关的智能体框架。VibeVideoAgent 在短暂即弃的解耦上下文中执行多模态感知（Gemini 3.8 Flash），结合零开销本地信号分析，在统一的多时钟草稿表征之上提供七个互补原语与轻量级阶段化制作协议。在 VibeVideoBench 全部 239 个任务上，VibeVideoAgent 在三大基座上一致提升整体视听品质（L3）：Claude Opus 5.5 从 4.03 升至 4.41（音画同步 +0.57），GPT-6 Astra 从 4.03 升至 4.27（L2 细则通过率达 99.15%、L1 技术合规达 99.51%），Claude Sonnet 5.5 从 3.97 升至 4.10（音画同步 +0.40）。</p>
+    </section>
+
+    <section id="architecture">
+      <h2><span lang="en">Multi-Clock Abstraction &amp; Seven Primitives</span><span lang="zh">多时钟草稿表征与七大原语</span></h2>
+      <figure class="ar-fig">
+        <div class="ar-fig-frame" data-zoom>
+          <img src="../assets/figs/vibe_arch.png" alt="VibeVideoAgent architecture with multi-clock draft representation and seven primitives">
+        </div>
+        <figcaption>
+          <span lang="en"><strong>Figure 2.</strong> Multi-clock draft representation, seven MCP production primitives (<code>describe_media</code>, <code>locate_event</code>, <code>inspect_segment</code>, <code>transcribe_speech</code>, <code>check_requirement</code>, <code>compare_media</code>, <code>probe_media</code>), and the staged production protocol (<code>plan_production</code>).</span>
+          <span lang="zh"><strong>图 2.</strong> 统一多时钟草稿表征、七个 MCP 制作原语与阶段化制作协议架构，无需针对特定渲染引擎编写适配器即可跨 HTML/Canvas/WebGPU、React/Remotion、Cairo、Manim 与 FFmpeg 管线通用。</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="results">
+      <h2><span lang="en">Main Results on VibeVideoBench (239 Tasks)</span><span lang="zh">VibeVideoBench 全量 239 任务主实验结果</span></h2>
+      <p lang="en">Equal-weight dual-judge averages across Gemini 3.8 Flash and Gemini 4 Argon under strictly matched 16-vCPU rendering sandboxes and fixed Gemini 3.8 Flash perception back-end.</p>
+      <p lang="zh">在严格一致的 16-vCPU 隔离渲染沙箱与固定 Gemini 3.8 Flash 感知后端下，Gemini 3.8 Flash 与 Gemini 4 Argon 等权双裁判评测结果（L1/L2 为百分比，L3 各维度为 1–5 分）。</p>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Coding Backbone</th>
+              <th>Configuration</th>
+              <th class="num">L1 Spec ↑</th>
+              <th class="num">L2 Rubric ↑</th>
+              <th class="num">VQ ↑</th>
+              <th class="num">VA ↑</th>
+              <th class="num">CL ↑</th>
+              <th class="num">TM ↑</th>
+              <th class="num">AQ ↑</th>
+              <th class="num">L3 Mean ↑</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Claude Opus 5.5</td><td>Native Agent</td><td class="num">99.92</td><td class="num">98.87</td><td class="num">4.04</td><td class="num">4.08</td><td class="num">4.09</td><td class="num">4.03</td><td class="num">3.89</td><td class="num">4.03</td></tr>
+            <tr class="hl"><td>Claude Opus 5.5</td><td>+ VibeVideoAgent</td><td class="num">97.81</td><td class="num">98.43</td><td class="num">4.35</td><td class="num">4.40</td><td class="num">4.45</td><td class="num">4.39</td><td class="num">4.46</td><td class="num">4.41</td></tr>
+            <tr><td>Claude Sonnet 5.5</td><td>Native Agent</td><td class="num">99.18</td><td class="num">96.36</td><td class="num">3.97</td><td class="num">4.02</td><td class="num">4.03</td><td class="num">3.96</td><td class="num">3.85</td><td class="num">3.97</td></tr>
+            <tr class="hl"><td>Claude Sonnet 5.5</td><td>+ VibeVideoAgent</td><td class="num">95.75</td><td class="num">94.61</td><td class="num">3.98</td><td class="num">4.05</td><td class="num">4.15</td><td class="num">4.07</td><td class="num">4.25</td><td class="num">4.10</td></tr>
+            <tr><td>GPT-6 Astra</td><td>Native Agent</td><td class="num">98.93</td><td class="num">98.67</td><td class="num">4.07</td><td class="num">4.09</td><td class="num">4.08</td><td class="num">3.98</td><td class="num">3.94</td><td class="num">4.03</td></tr>
+            <tr class="hl"><td>GPT-6 Astra</td><td>+ VibeVideoAgent</td><td class="num">99.51</td><td class="num">99.15</td><td class="num">4.26</td><td class="num">4.31</td><td class="num">4.29</td><td class="num">4.20</td><td class="num">4.26</td><td class="num">4.27</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="trajectory">
+      <h2><span lang="en">Recorded Closed-Loop Repair Trajectory</span><span lang="zh">实录闭环制作与修复轨迹（W0448）</span></h2>
+      <figure class="ar-fig">
+        <div class="ar-fig-frame" data-zoom>
+          <img src="../assets/figs/vibe_traj.png" alt="Recorded closed-loop production trajectory on task W0448">
+        </div>
+        <figcaption>
+          <span lang="en"><strong>Figure 3.</strong> Recorded execution of VibeVideoAgent (Claude Opus 5.5) on task <code>W0448</code>: upfront risk-first preview check, assembly-stage defect localization, surgical script patching, and dual-clock <code>compare_media</code> verification lifting L2 from 76.0% to 96.0% and L3 from 3.60 to 4.75 (Gemini 3.8 Flash judge).</span>
+          <span lang="zh"><strong>图 3.</strong> 任务 <code>W0448</code> 完整实录轨迹：前置高风险单帧预览校验、粗剪阶段精准定位三处动作缺陷、局部代码修补及双时钟差分验证，将 L2 从 76.0% 提升至 96.0%，L3 从 3.60 提升至 4.75。</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="citation">
+      <h2><span lang="en">Citation</span><span lang="zh">引用格式</span></h2>
+      <pre><code>@article{keyevideo2026vibevideoagent,
+  title   = {VibeVideoAgent: Closing the Perceptual Loop for Code-Driven Video Generation},
+  author  = {Keye Video Team},
+  journal = {arXiv preprint},
+  year    = {2026},
+  url     = {https://keye-video.github.io/vibevideoagent/}
+}</code></pre>
+    </section>
+  </div>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="foot-grid">
+    <div><div class="foot-brand"><img src="../assets/keye-logo.png" alt="Keye Video logo" width="28" height="28"><span>Keye Video Team</span></div><p class="foot-desc">Research on multimodal video understanding, native architectures, agentic harnesses, and evaluation benchmarks.</p></div>
+    <div class="foot-col"><h4>Papers</h4><ul><li><a href="../vibevideoagent/index.html">VibeVideoAgent</a></li><li><a href="../clve/index.html">CLVE</a></li><li><a href="../early-in-fusion/index.html">Early In-Fusion</a></li><li><a href="../videoace/index.html">VideoACE</a></li><li><a href="../rethinking-video-agents/index.html">Rethinking Video Agents</a></li><li><a href="../videonexus/index.html">VideoNexus</a></li></ul></div>
+    <div class="foot-col"><h4>Links</h4><ul><li><a href="../index.html">Team Homepage</a></li><li><a href="https://github.com/Keye-Video" target="_blank" rel="noopener">GitHub Organization</a></li></ul></div>
+    <div class="foot-col"><h4>Sections</h4><ul><li><a href="#overview">Overview</a></li><li><a href="#results">Results</a></li><li><a href="#citation">Citation</a></li></ul></div>
+  </div>
+  <div class="foot-bottom"><span>© 2026 Keye Video Team.</span><span>keye-video.github.io/vibevideoagent/</span></div>
+</footer>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>
