@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="../assets/keye-logo.png">
+<title>DELTAVID: Cross-Video Differences for Spatiotemporal Perception | Keye Video Team</title>
+<meta name="description" content="DELTAVID (arXiv:2607.02551): Enhancing Fine-Grained Spatiotemporal Perception with Cross-Video Differences.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400..700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body data-sidenav>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">
+      <img src="../assets/keye-logo.png" alt="Keye Video logo" width="32" height="32">
+      <span>Keye Video Team</span>
+    </a>
+    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span class="burger"></span></button>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="../index.html">Home</a>
+      <a class="active" href="#overview">Overview</a>
+      <a href="#results">Transfer</a>
+      <a href="#citation">Citation</a>
+      <a class="nav-cta" href="https://arxiv.org/abs/2607.02551" target="_blank" rel="noopener">arXiv</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="ar-page">
+  <header class="ar-head" id="main" tabindex="-1">
+    <div class="ar-crumb"><b><a href="../index.html">Keye Video Team</a></b><span>›</span><span>DELTAVID</span></div>
+    <div class="ar-eyebrow">
+      <span>Jun 26, 2026</span>
+      <span class="badge">arXiv:2607.02551</span>
+      <span class="badge badge-soft">Evaluation &amp; Perception</span>
+      <div class="ar-lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+      </div>
+    </div>
+
+    <h1>
+      <span lang="en">DELTAVID: Enhancing Fine-Grained Spatiotemporal Perception with Cross-Video Differences</span>
+      <span lang="zh">DELTAVID：基于跨视频差异信号的细粒度时空感知增强</span>
+    </h1>
+    <p class="ar-standfirst" lang="en">Turning cross-video spot-the-difference into a verifiable perception supervision signal—with DELTAVID-10K and DELTAVID-Bench transferring local evidence reasoning across 8 general video benchmarks.</p>
+    <p class="ar-standfirst" lang="zh">将跨视频“找不同”转化为可验证的局部时空感知监督信号，推出 DELTAVID-10K 与 DELTAVID-Bench，并显著迁移提升 8 大通用视频理解基准。</p>
+
+    <div class="ar-authors-block"><div class="ar-affiliation"><strong>Keye Video Team</strong></div></div>
+
+    <div class="ar-actions">
+      <a class="pill-btn solid" href="https://arxiv.org/abs/2607.02551" target="_blank" rel="noopener">arXiv Paper →</a>
+      <a class="pill-btn primary" href="https://arxiv.org/pdf/2607.02551" target="_blank" rel="noopener">PDF</a>
+      <a class="pill-btn" href="#citation">BibTeX</a>
+    </div>
+  </header>
+
+  <nav class="ar-toc" aria-label="Contents">
+    <ol>
+      <li><a href="#overview"><span lang="en">Overview</span><span lang="zh">概览</span></a></li>
+      <li><a href="#abstract"><span lang="en">Abstract</span><span lang="zh">摘要</span></a></li>
+      <li><a href="#results"><span lang="en">Transfer Results</span><span lang="zh">泛化结果</span></a></li>
+      <li><a href="#citation"><span lang="en">Citation</span><span lang="zh">引用</span></a></li>
+    </ol>
+  </nav>
+
+  <div class="ar-main">
+    <aside class="ar-side-rail" aria-label="Contents">
+      <div class="ar-side">
+        <div class="ar-side-title"><span lang="en">Contents</span><span lang="zh">目录</span></div>
+        <ol>
+          <li><a href="#overview"><span lang="en">Overview</span><span lang="zh">概览</span></a></li>
+          <li><a href="#abstract"><span lang="en">Abstract</span><span lang="zh">摘要</span></a></li>
+          <li><a href="#results"><span lang="en">Transfer Results</span><span lang="zh">泛化结果</span></a></li>
+          <li><a href="#citation"><span lang="en">Citation</span><span lang="zh">引用</span></a></li>
+        </ol>
+      </div>
+    </aside>
+
+    <figure class="ar-fig" id="overview">
+      <div class="ar-fig-frame" data-zoom>
+        <img src="../assets/figs/deltavid_overview.png" alt="DELTAVID cross-video difference framework overview">
+      </div>
+      <figcaption>
+        <span lang="en"><strong>Figure 1.</strong> Overview of DELTAVID: converting controllable local spatiotemporal differences between paired videos into verifiable proxy supervision for temporal boundary localization and spatial evidence reasoning.</span>
+        <span lang="zh"><strong>图 1.</strong> DELTAVID 总览：将一对全局语义高度相似视频中的可控局部时空差异转化为可验证代理监督信号，驱动模型定位时间边界与空间证据。</span>
+      </figcaption>
+    </figure>
+
+    <div class="stat-strip">
+      <div class="stat-box"><b>DELTAVID-10K</b><span lang="en">Evidence-labeled cross-video training set</span><span lang="zh">带证据标注的跨视频差异训练集</span></div>
+      <div class="stat-box"><b>DELTAVID-Bench</b><span lang="en">Diagnostic fine-grained perception benchmark</span><span lang="zh">细粒度时空差异诊断评测基准</span></div>
+      <div class="stat-box"><b>8 Benchmarks</b><span lang="en">Broad transfer (Video-MME, LVBench, MLVU, etc.)</span><span lang="zh">迁移提升 8 大通用视频理解基准</span></div>
+    </div>
+
+    <section id="abstract">
+      <h2><span lang="en">Abstract</span><span lang="zh">摘要</span></h2>
+      <p lang="en">Video multimodal large language models have made strong progress on open-ended video understanding, but they still lack precise local spatiotemporal perception. When two videos share almost the same global semantics and differ only in a short time span or a small region, current models often fail to find the change and provide reliable evidence.</p>
+      <p lang="en">We propose <strong>DELTAVID</strong>, a verifiable proxy-task framework that enhances fine-grained spatiotemporal perception with cross-video differences. By turning cross-video spot-the-difference into a trainable perception signal—supported by <strong>DELTAVID-10K</strong> and <strong>DELTAVID-Bench</strong>—models learn to identify local changes, judge temporal boundaries, and organize spatial evidence. Experiments show substantial gains on cross-video difference understanding and strong transfer to general video benchmarks including MMVU, MLVU, Video-MME, VideoHolmes, VideoMMMU, LVBench, TempCompass, and LongVideoBench.</p>
+      <p lang="zh">当两段视频全局语义几乎一致、仅在短暂时间窗口或局部区域存在细微差别时，现有视频多模态大模型往往难以定位变化并给出可靠证据。本文提出 <strong>DELTAVID</strong>，将跨视频“找不同”转化为可规模化训练、可客观验证的时空感知代理任务，并构建 <strong>DELTAVID-10K</strong> 与 <strong>DELTAVID-Bench</strong>。实验表明，该方法不仅大幅提升跨视频差异理解能力，还将学到的局部证据推理能力有效迁移至 MMVU、MLVU、Video-MME、VideoHolmes、VideoMMMU、LVBench、TempCompass 与 LongVideoBench 八大通用视频基准。</p>
+    </section>
+
+    <section id="results">
+      <h2><span lang="en">General Video Benchmark Transfer</span><span lang="zh">通用视频基准迁移效果</span></h2>
+      <figure class="ar-fig">
+        <div class="ar-fig-frame" data-zoom>
+          <img src="../assets/figs/deltavid_bench.png" alt="DELTAVID transfer gains across general video benchmarks">
+        </div>
+        <figcaption>
+          <span lang="en"><strong>Figure 2.</strong> Transfer of fine-grained spatiotemporal perception learned from DELTAVID across general video understanding benchmarks over training checkpoints.</span>
+          <span lang="zh"><strong>图 2.</strong> DELTAVID 训练过程中在多项通用视频理解基准上的持续泛化提升曲线。</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="citation">
+      <h2><span lang="en">Citation</span><span lang="zh">引用格式</span></h2>
+      <pre><code>@article{keyevideo2026deltavid,
+  title   = {DELTAVID: Enhancing Fine-Grained Spatiotemporal Perception with Cross-Video Differences},
+  author  = {Keye Video Team},
+  journal = {arXiv preprint arXiv:2607.02551},
+  year    = {2026},
+  url     = {https://arxiv.org/abs/2607.02551}
+}</code></pre>
+    </section>
+  </div>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="foot-grid">
+    <div><div class="foot-brand"><img src="../assets/keye-logo.png" alt="Keye Video logo" width="28" height="28"><span>Keye Video Team</span></div><p class="foot-desc">Research on multimodal video understanding, native architectures, agentic harnesses, and evaluation benchmarks.</p></div>
+    <div class="foot-col"><h4>Recent</h4><ul><li><a href="../vibevideoagent/index.html">VibeVideoAgent</a></li><li><a href="../clve/index.html">CLVE</a></li><li><a href="../early-in-fusion/index.html">Early In-Fusion</a></li><li><a href="../videoace/index.html">VideoACE</a></li><li><a href="../rethinking-video-agents/index.html">Rethinking Video Agents</a></li></ul></div>
+    <div class="foot-col"><h4>More Papers</h4><ul><li><a href="../videonexus/index.html">VideoNexus</a></li><li><a href="../sprout/index.html">Sprout</a></li><li><a href="../deltavid/index.html">DELTAVID</a></li><li><a href="../vcap/index.html">VCap</a></li><li><a href="../spatialreward/index.html">SpatialReward</a></li></ul></div>
+    <div class="foot-col"><h4>Links</h4><ul><li><a href="../index.html">Team Homepage</a></li><li><a href="https://arxiv.org/abs/2607.02551" target="_blank" rel="noopener">arXiv:2607.02551</a></li><li><a href="https://github.com/Keye-Video" target="_blank" rel="noopener">GitHub Organization</a></li></ul></div>
+  </div>
+  <div class="foot-bottom"><span>© 2026 Keye Video Team.</span><span>keye-video.github.io/deltavid/</span></div>
+</footer>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>

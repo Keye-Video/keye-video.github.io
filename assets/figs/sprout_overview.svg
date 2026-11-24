@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 490" width="920" height="490" role="img" aria-label="Sprout: building dynamic temporal memory tree while reasoning">
+  <!-- Sprout 动态时序记忆树示意图（Peach Fuzz 配色体系） -->
+  <rect width="920" height="490" fill="#FFF8F5"/>
+  <rect x="28" y="28" width="864" height="434" rx="14" fill="#FFFFFF" stroke="#E6D8D1"/>
+
+  <text x="56" y="70" font-family="Hanken Grotesk, sans-serif" font-size="18" font-weight="700" fill="#221916">Sprout: Building Dynamic Memory While Reasoning</text>
+  <text x="56" y="93" font-family="Hanken Grotesk, sans-serif" font-size="13.5" fill="#74655E">No upfront offline indexing · Temporal tree grows coarse-to-fine across questions while releasing raw frames from context</text>
+
+  <!-- 左侧对比：传统 Offline Build-then-Reason -->
+  <g transform="translate(56, 122)">
+    <rect width="234" height="276" rx="12" fill="#FAF6F3" stroke="#E6D8D1"/>
+    <text x="18" y="32" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#74655E">PRIOR: OFFLINE MEMORY</text>
+    <text x="18" y="54" font-family="Hanken Grotesk, sans-serif" font-size="15" font-weight="700" fill="#221916">Build-Then-Reason</text>
+    <rect x="18" y="74" width="198" height="44" rx="7" fill="#FFFFFF" stroke="#E6D8D1"/>
+    <text x="30" y="94" font-family="Hanken Grotesk, sans-serif" font-size="12" font-weight="600" fill="#4A3E39">1. Pre-index full video</text>
+    <text x="30" y="110" font-family="Hanken Grotesk, sans-serif" font-size="11" fill="#74655E">High upfront cost even for 1 QA</text>
+    <rect x="18" y="132" width="198" height="44" rx="7" fill="#FFFFFF" stroke="#E6D8D1"/>
+    <text x="30" y="152" font-family="Hanken Grotesk, sans-serif" font-size="12" font-weight="600" fill="#4A3E39">2. Static frozen tree</text>
+    <text x="30" y="168" font-family="Hanken Grotesk, sans-serif" font-size="11" fill="#74655E">Never updated as Q1..Qn run</text>
+    <rect x="18" y="190" width="198" height="66" rx="7" fill="#FCEAEA" stroke="#E6B8B8"/>
+    <text x="30" y="212" font-family="Hanken Grotesk, sans-serif" font-size="12" font-weight="700" fill="#9E1C1C">Bottleneck</text>
+    <text x="30" y="230" font-family="Hanken Grotesk, sans-serif" font-size="11" fill="#9E1C1C">Details discovered on Q1 are</text>
+    <text x="30" y="245" font-family="Hanken Grotesk, sans-serif" font-size="11" fill="#9E1C1C">discarded before Q2 starts.</text>
+  </g>
+
+  <!-- 右侧：Sprout 动态记忆树 -->
+  <g transform="translate(314, 122)">
+    <rect width="550" height="276" rx="12" fill="#FFF8F5" stroke="#F87C4C" stroke-width="1.8"/>
+    <rect x="20" y="18" width="196" height="24" rx="12" fill="#FEDCCC"/>
+    <text x="118" y="34" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#5A200B">SPROUT: ONLINE &amp; DYNAMIC</text>
+    <text x="232" y="34" font-family="Hanken Grotesk, sans-serif" font-size="13.5" font-weight="600" fill="#221916">Temporal Tree Sprouts Detailed Nodes On Demand</text>
+
+    <!-- Root 节点 -->
+    <rect x="20" y="58" width="510" height="36" rx="8" fill="#1F1816"/>
+    <text x="275" y="81" text-anchor="middle" font-family="Hanken Grotesk, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF">Long Video Stream — Persisted Memory Tree &amp; Prior QA Records</text>
+
+    <!-- 树枝连线 -->
+    <path d="M110 94V118 M275 94V118 M440 94V118" stroke="#D95726" stroke-width="1.8"/>
+
+    <!-- Coarse 层节点 -->
+    <rect x="20" y="118" width="160" height="48" rx="8" fill="#FFFFFF" stroke="#E6D8D1"/>
+    <text x="100" y="138" text-anchor="middle" font-family="Hanken Grotesk, sans-serif" font-size="12.5" font-weight="700" fill="#221916">Seg 1 [00:00–05:00]</text>
+    <text x="100" y="155" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10.5" fill="#74655E">Coarse text · frames freed</text>
+
+    <rect x="195" y="118" width="160" height="48" rx="8" fill="#FFF0E8" stroke="#F87C4C" stroke-width="1.5"/>
+    <text x="275" y="138" text-anchor="middle" font-family="Hanken Grotesk, sans-serif" font-size="12.5" font-weight="700" fill="#B54318">Seg 2 [05:00–10:00]</text>
+    <text x="275" y="155" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10.5" fill="#D95726">Sprouted during Q1</text>
+
+    <rect x="370" y="118" width="160" height="48" rx="8" fill="#FFFFFF" stroke="#E6D8D1" stroke-dasharray="5 4"/>
+    <text x="450" y="138" text-anchor="middle" font-family="Hanken Grotesk, sans-serif" font-size="12.5" font-weight="600" fill="#74655E">Seg 3+ (Unwatched)</text>
+    <text x="450" y="155" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10.5" fill="#998982">Stopped early on Q1</text>
+
+    <!-- 细粒度子节点 -->
+    <path d="M275 166V188 M215 188H335 M215 188V200 M335 188V200" stroke="#F87C4C" stroke-width="1.8"/>
+    <rect x="145" y="200" width="140" height="54" rx="8" fill="#F87C4C"/>
+    <text x="215" y="222" text-anchor="middle" font-family="Hanken Grotesk, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">High-FPS Leaf A</text>
+    <text x="215" y="240" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10.5" fill="#FFF8F5">[06:12–06:28] detail</text>
+
+    <rect x="295" y="200" width="140" height="54" rx="8" fill="#F87C4C"/>
+    <text x="365" y="222" text-anchor="middle" font-family="Hanken Grotesk, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">High-FPS Leaf B</text>
+    <text x="365" y="240" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10.5" fill="#FFF8F5">Reused by Q2..Qn</text>
+
+    <!-- 释放帧提示 -->
+    <rect x="20" y="200" width="112" height="54" rx="8" fill="#E6F4EE" stroke="#16794F"/>
+    <text x="76" y="222" text-anchor="middle" font-family="Hanken Grotesk, sans-serif" font-size="11.5" font-weight="700" fill="#16794F">Frame Release</text>
+    <text x="76" y="239" text-anchor="middle" font-family="Hanken Grotesk, sans-serif" font-size="10.5" fill="#16794F">Lean context</text>
+  </g>
+
+  <text x="56" y="432" font-family="JetBrains Mono, monospace" font-size="12" fill="#74655E">arXiv:2609.35497 · Keye Video Team · Dynamic online video memory while reasoning</text>
+</svg>

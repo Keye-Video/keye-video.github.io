@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="../assets/keye-logo.png">
+<title>SpatialReward: Explicit Spatial Reasoning for Online RL | Keye Video Team</title>
+<meta name="description" content="SpatialReward (arXiv:2602.07458): Bridging the Perception Gap in Online RL for Image Editing via Explicit Spatial Reasoning.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400..700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body data-sidenav>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">
+      <img src="../assets/keye-logo.png" alt="Keye Video logo" width="32" height="32">
+      <span>Keye Video Team</span>
+    </a>
+    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span class="burger"></span></button>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="../index.html">Home</a>
+      <a class="active" href="#overview">Overview</a>
+      <a href="#attention">Analysis</a>
+      <a href="#citation">Citation</a>
+      <a class="nav-cta" href="https://arxiv.org/abs/2602.07458" target="_blank" rel="noopener">arXiv</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="ar-page">
+  <header class="ar-head" id="main" tabindex="-1">
+    <div class="ar-crumb"><b><a href="../index.html">Keye Video Team</a></b><span>›</span><span>SpatialReward</span></div>
+    <div class="ar-eyebrow">
+      <span>Feb 7, 2026</span>
+      <span class="badge">arXiv:2602.07458</span>
+      <span class="badge badge-soft">RL &amp; Rewards</span>
+      <div class="ar-lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+      </div>
+    </div>
+
+    <h1>
+      <span lang="en">SpatialReward: Bridging the Perception Gap in Online RL for Image Editing via Explicit Spatial Reasoning</span>
+      <span lang="zh">SpatialReward：通过显式空间推理弥合图像编辑在线强化学习的感知鸿沟</span>
+    </h1>
+    <p class="ar-standfirst" lang="en">Anchoring reward judgments to predicted pixel-level edit regions resolves Attention Collapse—boosting OmniGen2 by +0.90 on GEdit-Bench, doubling the gain of GPT-4.1.</p>
+    <p class="ar-standfirst" lang="zh">通过将奖励判断显式锚定至预测编辑区域来破解跨图“注意力坍缩”难题，在线强化学习中将 OmniGen2 在 GEdit-Bench 上提升 +0.90，达到 GPT-4.1 增益的两倍。</p>
+
+    <div class="ar-authors-block"><div class="ar-affiliation"><strong>Keye Video Team</strong></div></div>
+
+    <div class="ar-actions">
+      <a class="pill-btn solid" href="https://arxiv.org/abs/2602.07458" target="_blank" rel="noopener">arXiv Paper →</a>
+      <a class="pill-btn primary" href="https://arxiv.org/pdf/2602.07458" target="_blank" rel="noopener">PDF</a>
+      <a class="pill-btn" href="#citation">BibTeX</a>
+    </div>
+  </header>
+
+  <nav class="ar-toc" aria-label="Contents">
+    <ol>
+      <li><a href="#overview"><span lang="en">Overview</span><span lang="zh">概览</span></a></li>
+      <li><a href="#abstract"><span lang="en">Abstract</span><span lang="zh">摘要</span></a></li>
+      <li><a href="#attention"><span lang="en">Attention Collapse</span><span lang="zh">注意力坍缩分析</span></a></li>
+      <li><a href="#citation"><span lang="en">Citation</span><span lang="zh">引用</span></a></li>
+    </ol>
+  </nav>
+
+  <div class="ar-main">
+    <aside class="ar-side-rail" aria-label="Contents">
+      <div class="ar-side">
+        <div class="ar-side-title"><span lang="en">Contents</span><span lang="zh">目录</span></div>
+        <ol>
+          <li><a href="#overview"><span lang="en">Overview</span><span lang="zh">概览</span></a></li>
+          <li><a href="#abstract"><span lang="en">Abstract</span><span lang="zh">摘要</span></a></li>
+          <li><a href="#attention"><span lang="en">Attention Collapse</span><span lang="zh">注意力坍缩分析</span></a></li>
+          <li><a href="#citation"><span lang="en">Citation</span><span lang="zh">引用</span></a></li>
+        </ol>
+      </div>
+    </aside>
+
+    <figure class="ar-fig" id="overview">
+      <div class="ar-fig-frame" data-zoom>
+        <img src="../assets/figs/spatialreward_overview.png" alt="SpatialReward explicit spatial reasoning reward model overview">
+      </div>
+      <figcaption>
+        <span lang="en"><strong>Figure 1.</strong> Overview of SpatialReward: explicitly predicting edit regions and grounding fine-grained cross-image verification in pixel-level evidence to supply calibrated online RL rewards.</span>
+        <span lang="zh"><strong>图 1.</strong> SpatialReward 总览：通过显式预测编辑区域并将跨图验证锚定于像素级证据，为在线强化学习提供精准可靠的细粒度奖励。</span>
+      </figcaption>
+    </figure>
+
+    <div class="stat-strip">
+      <div class="stat-box"><b>+0.90 GEdit</b><span lang="en">Online RL boost on OmniGen2 (2× GPT-4.1's +0.45)</span><span lang="zh">在线 RL 将 OmniGen2 提升 +0.90（GPT-4.1 的两倍）</span></div>
+      <div class="stat-box"><b>260K Dataset</b><span lang="en">Curated spatial-aware edit reward training data</span><span lang="zh">构建 26 万条空间感知编辑奖励训练数据</span></div>
+      <div class="stat-box"><b>SOTA Reward</b><span lang="en">Top accuracy on MMRB2, EditReward &amp; MultiEditReward</span><span lang="zh">在 MMRB2、EditReward 与 MultiEditReward 取得 SOTA</span></div>
+    </div>
+
+    <section id="abstract">
+      <h2><span lang="en">Abstract</span><span lang="zh">摘要</span></h2>
+      <p lang="en">Online Reinforcement Learning (RL) offers a promising avenue for complex image editing but is currently constrained by the scarcity of reliable, fine-grained reward signals. Existing evaluators suffer from a critical perception gap we term <em>Attention Collapse</em>, where models neglect cross-image comparisons and miss fine-grained details, resulting in miscalibrated scores.</p>
+      <p lang="en">We propose <strong>SpatialReward</strong>, a reward model that enforces precise verification via explicit spatial reasoning. By anchoring reasoning to predicted edit regions, SpatialReward grounds semantic judgments in pixel-level evidence. Trained on a curated 260k spatial-aware dataset, SpatialReward achieves state-of-the-art performance on MMRB2 and EditReward-Bench, outperforms proprietary evaluators on MultiEditReward-Bench, and boosts OmniGen2 by +0.90 on GEdit-Bench in online RL—surpassing the leading discriminative model and doubling the gain of GPT-4.1 (+0.45).</p>
+      <p lang="zh">复杂图像编辑的在线强化学习长期受限于可靠细粒度奖励信号的匮乏，现有评测器普遍存在忽视跨图比对与细节失准的“注意力坍缩”现象。本文提出 <strong>SpatialReward</strong>，通过显式空间推理将语义评判锚定到预测的像素级编辑区域。基于 26 万条空间感知数据训练后，SpatialReward 在 MMRB2 与 EditReward-Bench 刷新 SOTA，并在 MultiEditReward-Bench 超越闭源评测器；作为在线 RL 奖励信号，可将 OmniGen2 在 GEdit-Bench 上提升 +0.90，达到 GPT-4.1（+0.45）增益的两倍。</p>
+    </section>
+
+    <section id="attention">
+      <h2><span lang="en">Diagnosing Attention Collapse</span><span lang="zh">注意力坍缩诊断可视化</span></h2>
+      <figure class="ar-fig">
+        <div class="ar-fig-frame" data-zoom>
+          <img src="../assets/figs/spatialreward_attn.png" alt="Attention visualization comparing baseline evaluators vs SpatialReward">
+        </div>
+        <figcaption>
+          <span lang="en"><strong>Figure 2.</strong> Attention visualization illustrating how explicit spatial reasoning restores cross-image focus on fine-grained edited regions.</span>
+          <span lang="zh"><strong>图 2.</strong> 注意力可视化对比，展示显式空间推理如何恢复模型对跨图细粒度编辑区域的精准聚焦。</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="citation">
+      <h2><span lang="en">Citation</span><span lang="zh">引用格式</span></h2>
+      <pre><code>@article{keyevideo2026spatialreward,
+  title   = {SpatialReward: Bridging the Perception Gap in Online RL for Image Editing via Explicit Spatial Reasoning},
+  author  = {Keye Video Team},
+  journal = {arXiv preprint arXiv:2602.07458},
+  year    = {2026},
+  url     = {https://arxiv.org/abs/2602.07458}
+}</code></pre>
+    </section>
+  </div>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="foot-grid">
+    <div><div class="foot-brand"><img src="../assets/keye-logo.png" alt="Keye Video logo" width="28" height="28"><span>Keye Video Team</span></div><p class="foot-desc">Research on multimodal video understanding, native architectures, agentic harnesses, and evaluation benchmarks.</p></div>
+    <div class="foot-col"><h4>Recent</h4><ul><li><a href="../vibevideoagent/index.html">VibeVideoAgent</a></li><li><a href="../clve/index.html">CLVE</a></li><li><a href="../early-in-fusion/index.html">Early In-Fusion</a></li><li><a href="../videoace/index.html">VideoACE</a></li><li><a href="../rethinking-video-agents/index.html">Rethinking Video Agents</a></li></ul></div>
+    <div class="foot-col"><h4>More Papers</h4><ul><li><a href="../videonexus/index.html">VideoNexus</a></li><li><a href="../sprout/index.html">Sprout</a></li><li><a href="../deltavid/index.html">DELTAVID</a></li><li><a href="../vcap/index.html">VCap</a></li><li><a href="../spatialreward/index.html">SpatialReward</a></li></ul></div>
+    <div class="foot-col"><h4>Links</h4><ul><li><a href="../index.html">Team Homepage</a></li><li><a href="https://arxiv.org/abs/2602.07458" target="_blank" rel="noopener">arXiv:2602.07458</a></li><li><a href="https://github.com/Keye-Video" target="_blank" rel="noopener">GitHub Organization</a></li></ul></div>
+  </div>
+  <div class="foot-bottom"><span>© 2026 Keye Video Team.</span><span>keye-video.github.io/spatialreward/</span></div>
+</footer>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>

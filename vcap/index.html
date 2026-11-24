@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="../assets/keye-logo.png">
+<title>VCap: Hypergeometric Rewards for Visual Captioning | Keye Video Team</title>
+<meta name="description" content="VCap (arXiv:2605.28023): Hypergeometric Rewards for Weak-to-Strong Visual Captioning.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400..700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body data-sidenav>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">
+      <img src="../assets/keye-logo.png" alt="Keye Video logo" width="32" height="32">
+      <span>Keye Video Team</span>
+    </a>
+    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span class="burger"></span></button>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="../index.html">Home</a>
+      <a class="active" href="#overview">Overview</a>
+      <a href="#results">Human Eval</a>
+      <a href="#citation">Citation</a>
+      <a class="nav-cta" href="https://arxiv.org/abs/2605.28023" target="_blank" rel="noopener">arXiv</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="ar-page">
+  <header class="ar-head" id="main" tabindex="-1">
+    <div class="ar-crumb"><b><a href="../index.html">Keye Video Team</a></b><span>›</span><span>VCap</span></div>
+    <div class="ar-eyebrow">
+      <span>May 27, 2026</span>
+      <span class="badge">arXiv:2605.28023</span>
+      <span class="badge badge-soft">RL &amp; Rewards</span>
+      <div class="ar-lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+      </div>
+    </div>
+
+    <h1>
+      <span lang="en">VCap: Hypergeometric Rewards for Weak-to-Strong Visual Captioning</span>
+      <span lang="zh">VCap：面向弱到强视觉描述的超几何奖励机制</span>
+    </h1>
+    <p class="ar-standfirst" lang="en">A Witness-Adjudicator reward pairing reference captions with visual grounding to achieve hypergeometric-level factual precision—enabling an 8B model to beat open- and closed-source SOTA captioners.</p>
+    <p class="ar-standfirst" lang="zh">提出“证人-裁决者”奖励机制，结合参考文本与原始视觉信号进行事实一致性核验，在存在不完美参考标注的条件下实现弱到强泛化，驱动 8B 模型在多项图文与视频描述基准超越开源及闭源 SOTA。</p>
+
+    <div class="ar-authors-block"><div class="ar-affiliation"><strong>Keye Video Team</strong></div></div>
+
+    <div class="ar-actions">
+      <a class="pill-btn solid" href="https://arxiv.org/abs/2605.28023" target="_blank" rel="noopener">arXiv Paper →</a>
+      <a class="pill-btn primary" href="https://arxiv.org/pdf/2605.28023" target="_blank" rel="noopener">PDF</a>
+      <a class="pill-btn" href="#citation">BibTeX</a>
+    </div>
+  </header>
+
+  <nav class="ar-toc" aria-label="Contents">
+    <ol>
+      <li><a href="#overview"><span lang="en">Overview</span><span lang="zh">概览</span></a></li>
+      <li><a href="#abstract"><span lang="en">Abstract</span><span lang="zh">摘要</span></a></li>
+      <li><a href="#results"><span lang="en">Human Evaluation</span><span lang="zh">人工评测</span></a></li>
+      <li><a href="#citation"><span lang="en">Citation</span><span lang="zh">引用</span></a></li>
+    </ol>
+  </nav>
+
+  <div class="ar-main">
+    <aside class="ar-side-rail" aria-label="Contents">
+      <div class="ar-side">
+        <div class="ar-side-title"><span lang="en">Contents</span><span lang="zh">目录</span></div>
+        <ol>
+          <li><a href="#overview"><span lang="en">Overview</span><span lang="zh">概览</span></a></li>
+          <li><a href="#abstract"><span lang="en">Abstract</span><span lang="zh">摘要</span></a></li>
+          <li><a href="#results"><span lang="en">Human Evaluation</span><span lang="zh">人工评测</span></a></li>
+          <li><a href="#citation"><span lang="en">Citation</span><span lang="zh">引用</span></a></li>
+        </ol>
+      </div>
+    </aside>
+
+    <figure class="ar-fig" id="overview">
+      <div class="ar-fig-frame" data-zoom>
+        <img src="../assets/figs/vcap_overview.png" alt="VCap Witness-Adjudicator reward architecture">
+      </div>
+      <figcaption>
+        <span lang="en"><strong>Figure 1.</strong> VCap Witness-Adjudicator reward architecture pairing reference captions (witness) with direct visual verification (adjudicator) for weak-to-strong RL captioning.</span>
+        <span lang="zh"><strong>图 1.</strong> VCap“证人-裁决者”奖励架构：以参考描述作为证人、以视觉信号作为裁决者，提供高精度的事实一致性强化学习奖励。</span>
+      </figcaption>
+    </figure>
+
+    <div class="stat-strip">
+      <div class="stat-box"><b>8B → SOTA</b><span lang="en">Outperforms open &amp; closed-source captioning SOTA</span><span lang="zh">8B 模型在多项图文/视频描述基准超越开源与闭源 SOTA</span></div>
+      <div class="stat-box"><b>Witness–Adj.</b><span lang="en">Hypergeometric-level factual reward precision</span><span lang="zh">超几何分布级精度的事实验证奖励</span></div>
+      <div class="stat-box"><b>Weak-to-Strong</b><span lang="en">Surpasses Best-of-N distillation even on imperfect refs</span><span lang="zh">不完美参考下依然实现弱到强泛化并超越 BoN 蒸馏</span></div>
+    </div>
+
+    <section id="abstract">
+      <h2><span lang="en">Abstract</span><span lang="zh">摘要</span></h2>
+      <p lang="en">Visual captioning requires models to capture visual content faithfully while minimizing both omission and hallucination. While RL has emerged as a promising route to drive MLLMs toward higher precision and broader coverage, existing captioning rewards fail to deliver fine-grained, reliable signals for factual verification.</p>
+      <p lang="en">We propose <strong>VCap</strong>, a Witness-Adjudicator reward that pairs the reference caption (a witness) with the visual signal (an adjudicator). By explicitly verifying factual consistency between reference and policy-generated captions grounded in visual evidence, VCap delivers a reward signal with hypergeometric-distribution-level precision, enabling weak-to-strong generalization even from imperfect references. An 8B model trained with VCap outperforms open- and closed-source SOTA models across multiple image and video captioning benchmarks, improves general perceptual capability, and surpasses best-of-N distillation.</p>
+      <p lang="zh">视觉描述要求模型忠实覆盖画面细节并同时压低遗漏与幻觉。本文提出 <strong>VCap</strong> 证人-裁决者奖励机制，将参考描述作为证人、原始视觉信号作为裁决者进行显式事实一致性核验，提供达到超几何分布级精度的细粒度奖励信号，即使参考标注不完美仍能驱动强化学习实现弱到强泛化。实验表明，经 VCap 训练的 8B 模型在多项图像与视频描述基准上超越开源与闭源 SOTA，并优于 Best-of-N 蒸馏。</p>
+    </section>
+
+    <section id="results">
+      <h2><span lang="en">Human Pairwise Evaluation</span><span lang="zh">人工成对评测对齐度</span></h2>
+      <figure class="ar-fig">
+        <div class="ar-fig-frame" data-zoom>
+          <img src="../assets/figs/vcap_heatmap.png" alt="VCap human pairwise evaluation heatmap">
+        </div>
+        <figcaption>
+          <span lang="en"><strong>Figure 2.</strong> Human pairwise evaluation confirming VCap's strong alignment with factual correctness and caption coverage over strong baselines.</span>
+          <span lang="zh"><strong>图 2.</strong> 人工成对评测热力图，验证 VCap 在事实准确性与细节覆盖度上相对强基线的显著优势。</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="citation">
+      <h2><span lang="en">Citation</span><span lang="zh">引用格式</span></h2>
+      <pre><code>@article{keyevideo2026vcap,
+  title   = {VCap: Hypergeometric Rewards for Weak-to-Strong Visual Captioning},
+  author  = {Keye Video Team},
+  journal = {arXiv preprint arXiv:2605.28023},
+  year    = {2026},
+  url     = {https://arxiv.org/abs/2605.28023}
+}</code></pre>
+    </section>
+  </div>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="foot-grid">
+    <div><div class="foot-brand"><img src="../assets/keye-logo.png" alt="Keye Video logo" width="28" height="28"><span>Keye Video Team</span></div><p class="foot-desc">Research on multimodal video understanding, native architectures, agentic harnesses, and evaluation benchmarks.</p></div>
+    <div class="foot-col"><h4>Recent</h4><ul><li><a href="../vibevideoagent/index.html">VibeVideoAgent</a></li><li><a href="../clve/index.html">CLVE</a></li><li><a href="../early-in-fusion/index.html">Early In-Fusion</a></li><li><a href="../videoace/index.html">VideoACE</a></li><li><a href="../rethinking-video-agents/index.html">Rethinking Video Agents</a></li></ul></div>
+    <div class="foot-col"><h4>More Papers</h4><ul><li><a href="../videonexus/index.html">VideoNexus</a></li><li><a href="../sprout/index.html">Sprout</a></li><li><a href="../deltavid/index.html">DELTAVID</a></li><li><a href="../vcap/index.html">VCap</a></li><li><a href="../spatialreward/index.html">SpatialReward</a></li></ul></div>
+    <div class="foot-col"><h4>Links</h4><ul><li><a href="../index.html">Team Homepage</a></li><li><a href="https://arxiv.org/abs/2605.28023" target="_blank" rel="noopener">arXiv:2605.28023</a></li><li><a href="https://github.com/Keye-Video" target="_blank" rel="noopener">GitHub Organization</a></li></ul></div>
+  </div>
+  <div class="foot-bottom"><span>© 2026 Keye Video Team.</span><span>keye-video.github.io/vcap/</span></div>
+</footer>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>

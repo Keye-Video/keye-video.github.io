@@ -53,7 +53,7 @@
     <h1 class="lab-title">Advancing <em>multimodal</em> video understanding.</h1>
     <p class="lab-lede">Keye Video Team is a research group working on video multimodal foundation models and native video architectures.</p>
     <div class="lab-cta-row">
-      <a class="pill-btn solid" href="#publications">All Publications (6) →</a>
+      <a class="pill-btn solid" href="#publications">All Publications (10) →</a>
       <a class="pill-btn primary" href="https://github.com/Keye-Video" target="_blank" rel="noopener">GitHub Organization</a>
     </div>
   </div>
@@ -113,9 +113,10 @@
     </div>
 
     <div class="filter-bar" data-pub-filter role="group" aria-label="Filter papers">
-      <button type="button" data-tag="all" aria-pressed="true">All (6)</button>
+      <button type="button" data-tag="all" aria-pressed="true">All (10)</button>
       <button type="button" data-tag="agents" aria-pressed="false">Video Agents</button>
       <button type="button" data-tag="evaluation" aria-pressed="false">Evaluation &amp; Benchmarks</button>
+      <button type="button" data-tag="rl" aria-pressed="false">RL &amp; Rewards</button>
       <button type="button" data-tag="architecture" aria-pressed="false">Architecture</button>
     </div>
 
@@ -275,6 +276,110 @@
         </div>
       </article>
 
+      <!-- 7. Sprout -->
+      <article class="paper-card" data-tags="agents">
+        <a class="spotlight-visual" href="./sprout/index.html" aria-label="Sprout project page">
+          <img src="./assets/figs/sprout_overview.svg" alt="Sprout online dynamic memory tree diagram" loading="lazy">
+        </a>
+        <div class="spotlight-body">
+          <div class="spotlight-meta">
+            <span class="badge">arXiv:2609.35497</span>
+            <span class="badge badge-soft">Video Agents</span>
+            <span>Sep 28, 2026</span>
+          </div>
+          <h3 class="spotlight-title"><a href="./sprout/index.html">Sprout: Building Dynamic Memory While Reasoning for Agentic Video Understanding</a></h3>
+          <p class="spotlight-authors">Keye Video Team</p>
+          <p class="spotlight-desc">Builds an online temporal memory tree while answering questions—watching segments lazily, sprouting high-FPS detail nodes on demand, releasing raw frames once recorded as text, and reusing memory across queries.</p>
+          <div class="spotlight-metrics">
+            <div><b>Zero Upfront</b><span>No offline indexing</span></div>
+            <div><b>Dynamic Tree</b><span>Grows across QA</span></div>
+            <div><b>Frame Release</b><span>Lower context cost</span></div>
+          </div>
+          <div class="lab-cta-row">
+            <a class="pill-btn solid" href="./sprout/index.html">Project Page →</a>
+            <a class="pill-btn" href="https://arxiv.org/abs/2609.35497" target="_blank" rel="noopener">arXiv</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 8. DELTAVID -->
+      <article class="paper-card" data-tags="evaluation">
+        <a class="spotlight-visual" href="./deltavid/index.html" aria-label="DELTAVID project page">
+          <img src="./assets/figs/deltavid_overview.png" alt="DELTAVID cross-video difference framework" loading="lazy">
+        </a>
+        <div class="spotlight-body">
+          <div class="spotlight-meta">
+            <span class="badge">arXiv:2607.02551</span>
+            <span class="badge badge-soft">Evaluation</span>
+            <span>Jun 26, 2026</span>
+          </div>
+          <h3 class="spotlight-title"><a href="./deltavid/index.html">DELTAVID: Enhancing Fine-Grained Spatiotemporal Perception with Cross-Video Differences</a></h3>
+          <p class="spotlight-authors">Keye Video Team</p>
+          <p class="spotlight-desc">Turns cross-video spot-the-difference into a verifiable spatiotemporal perception signal via DELTAVID-10K and DELTAVID-Bench, transferring local evidence reasoning across 8 general video benchmarks.</p>
+          <div class="spotlight-metrics">
+            <div><b>DELTAVID-10K</b><span>Evidence-labeled train</span></div>
+            <div><b>DELTAVID-Bench</b><span>Difference diagnostic</span></div>
+            <div><b>8 Benchmarks</b><span>Broad video transfer</span></div>
+          </div>
+          <div class="lab-cta-row">
+            <a class="pill-btn solid" href="./deltavid/index.html">Project Page →</a>
+            <a class="pill-btn" href="https://arxiv.org/abs/2607.02551" target="_blank" rel="noopener">arXiv</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 9. VCap -->
+      <article class="paper-card" data-tags="rl">
+        <a class="spotlight-visual" href="./vcap/index.html" aria-label="VCap project page">
+          <img src="./assets/figs/vcap_overview.png" alt="VCap Witness-Adjudicator reward architecture" loading="lazy">
+        </a>
+        <div class="spotlight-body">
+          <div class="spotlight-meta">
+            <span class="badge">arXiv:2605.28023</span>
+            <span class="badge badge-soft">RL &amp; Rewards</span>
+            <span>May 27, 2026</span>
+          </div>
+          <h3 class="spotlight-title"><a href="./vcap/index.html">VCap: Hypergeometric Rewards for Weak-to-Strong Visual Captioning</a></h3>
+          <p class="spotlight-authors">Keye Video Team</p>
+          <p class="spotlight-desc">A Witness-Adjudicator reward pairing reference captions with visual grounding to deliver hypergeometric-level factual verification—enabling an 8B RL model to outperform open- and closed-source SOTA captioners.</p>
+          <div class="spotlight-metrics">
+            <div><b>8B → SOTA</b><span>Beats open &amp; closed</span></div>
+            <div><b>Witness–Adj.</b><span>Visual grounding</span></div>
+            <div><b>Weak-to-Strong</b><span>Surpasses BoN distill</span></div>
+          </div>
+          <div class="lab-cta-row">
+            <a class="pill-btn solid" href="./vcap/index.html">Project Page →</a>
+            <a class="pill-btn" href="https://arxiv.org/abs/2605.28023" target="_blank" rel="noopener">arXiv</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 10. SpatialReward -->
+      <article class="paper-card" data-tags="rl">
+        <a class="spotlight-visual" href="./spatialreward/index.html" aria-label="SpatialReward project page">
+          <img src="./assets/figs/spatialreward_overview.png" alt="SpatialReward explicit spatial reasoning reward model" loading="lazy">
+        </a>
+        <div class="spotlight-body">
+          <div class="spotlight-meta">
+            <span class="badge">arXiv:2602.07458</span>
+            <span class="badge badge-soft">RL &amp; Rewards</span>
+            <span>Feb 7, 2026</span>
+          </div>
+          <h3 class="spotlight-title"><a href="./spatialreward/index.html">SpatialReward: Bridging the Perception Gap in Online RL for Image Editing via Explicit Spatial Reasoning</a></h3>
+          <p class="spotlight-authors">Keye Video Team</p>
+          <p class="spotlight-desc">Resolves cross-image Attention Collapse by anchoring reward reasoning to predicted edit regions—achieving SOTA on MMRB2 and EditReward-Bench and boosting OmniGen2 by +0.90 on GEdit-Bench in online RL.</p>
+          <div class="spotlight-metrics">
+            <div><b>+0.90 GEdit</b><span>2× GPT-4.1 RL gain</span></div>
+            <div><b>260K Dataset</b><span>Spatial-aware data</span></div>
+            <div><b>SOTA</b><span>MMRB2 &amp; EditReward</span></div>
+          </div>
+          <div class="lab-cta-row">
+            <a class="pill-btn solid" href="./spatialreward/index.html">Project Page →</a>
+            <a class="pill-btn" href="https://arxiv.org/abs/2602.07458" target="_blank" rel="noopener">arXiv</a>
+          </div>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
@@ -307,26 +412,29 @@
       <p class="foot-desc">Research on multimodal video understanding, native video architectures, agentic harnesses, and evaluation benchmarks.</p>
     </div>
     <div class="foot-col">
-      <h4>Papers</h4>
+      <h4>Recent</h4>
       <ul>
         <li><a href="./vibevideoagent/index.html">VibeVideoAgent</a></li>
         <li><a href="./clve/index.html">CLVE</a></li>
         <li><a href="./early-in-fusion/index.html">Early In-Fusion</a></li>
         <li><a href="./videoace/index.html">VideoACE</a></li>
         <li><a href="./rethinking-video-agents/index.html">Rethinking Video Agents</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>More Papers</h4>
+      <ul>
         <li><a href="./videonexus/index.html">VideoNexus</a></li>
+        <li><a href="./sprout/index.html">Sprout</a></li>
+        <li><a href="./deltavid/index.html">DELTAVID</a></li>
+        <li><a href="./vcap/index.html">VCap</a></li>
+        <li><a href="./spatialreward/index.html">SpatialReward</a></li>
       </ul>
     </div>
     <div class="foot-col">
       <h4>Links</h4>
       <ul>
         <li><a href="https://github.com/Keye-Video" target="_blank" rel="noopener">GitHub Organization</a></li>
-        <li><a href="https://arxiv.org/abs/2611.21392v1" target="_blank" rel="noopener">arXiv:2611.21392</a></li>
-      </ul>
-    </div>
-    <div class="foot-col">
-      <h4>Site</h4>
-      <ul>
         <li><a href="#featured">Featured</a></li>
         <li><a href="#publications">Publications</a></li>
         <li><a href="#team">Team</a></li>

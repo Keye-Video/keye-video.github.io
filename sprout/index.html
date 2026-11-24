@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="../assets/keye-logo.png">
+<title>Sprout: Building Dynamic Memory While Reasoning | Keye Video Team</title>
+<meta name="description" content="Sprout (arXiv:2609.35497): Building Dynamic Memory While Reasoning for Agentic Video Understanding.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400..700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body data-sidenav>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">
+      <img src="../assets/keye-logo.png" alt="Keye Video logo" width="32" height="32">
+      <span>Keye Video Team</span>
+    </a>
+    <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span class="burger"></span></button>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="../index.html">Home</a>
+      <a class="active" href="#overview">Overview</a>
+      <a href="#findings">Highlights</a>
+      <a href="#citation">Citation</a>
+      <a class="nav-cta" href="https://arxiv.org/abs/2609.35497" target="_blank" rel="noopener">arXiv</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="ar-page">
+  <header class="ar-head" id="main" tabindex="-1">
+    <div class="ar-crumb"><b><a href="../index.html">Keye Video Team</a></b><span>›</span><span>Sprout</span></div>
+    <div class="ar-eyebrow">
+      <span>Sep 28, 2026</span>
+      <span class="badge">arXiv:2609.35497</span>
+      <span class="badge badge-soft">Video Agents</span>
+      <div class="ar-lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+      </div>
+    </div>
+
+    <h1>
+      <span lang="en">Sprout: Building Dynamic Memory While Reasoning for Agentic Video Understanding</span>
+      <span lang="zh">Sprout：面向智能体视频理解的边推理边构建动态记忆框架</span>
+    </h1>
+    <p class="ar-standfirst" lang="en">An online temporal memory tree that sprouts fine-grained nodes on demand while answering questions—eliminating upfront offline indexing and releasing raw video frames from context.</p>
+    <p class="ar-standfirst" lang="zh">无需前置离线建库：在多轮问答过程中按需生长细粒度时序记忆树，记录文本记忆后即时释放原始视频帧上下文，并跨问题持续复用与更新。</p>
+
+    <div class="ar-authors-block"><div class="ar-affiliation"><strong>Keye Video Team</strong></div></div>
+
+    <div class="ar-actions">
+      <a class="pill-btn solid" href="https://arxiv.org/abs/2609.35497" target="_blank" rel="noopener">arXiv Paper →</a>
+      <a class="pill-btn primary" href="https://arxiv.org/pdf/2609.35497" target="_blank" rel="noopener">PDF</a>
+      <a class="pill-btn" href="#citation">BibTeX</a>
+    </div>
+  </header>
+
+  <nav class="ar-toc" aria-label="Contents">
+    <ol>
+      <li><a href="#overview"><span lang="en">Overview</span><span lang="zh">概览</span></a></li>
+      <li><a href="#abstract"><span lang="en">Abstract</span><span lang="zh">摘要</span></a></li>
+      <li><a href="#findings"><span lang="en">Highlights</span><span lang="zh">核心亮点</span></a></li>
+      <li><a href="#citation"><span lang="en">Citation</span><span lang="zh">引用</span></a></li>
+    </ol>
+  </nav>
+
+  <div class="ar-main">
+    <aside class="ar-side-rail" aria-label="Contents">
+      <div class="ar-side">
+        <div class="ar-side-title"><span lang="en">Contents</span><span lang="zh">目录</span></div>
+        <ol>
+          <li><a href="#overview"><span lang="en">Overview</span><span lang="zh">概览</span></a></li>
+          <li><a href="#abstract"><span lang="en">Abstract</span><span lang="zh">摘要</span></a></li>
+          <li><a href="#findings"><span lang="en">Highlights</span><span lang="zh">核心亮点</span></a></li>
+          <li><a href="#citation"><span lang="en">Citation</span><span lang="zh">引用</span></a></li>
+        </ol>
+      </div>
+    </aside>
+
+    <figure class="ar-fig" id="overview">
+      <div class="ar-fig-frame" data-zoom>
+        <img src="../assets/figs/sprout_overview.svg" alt="Sprout online dynamic memory tree diagram">
+      </div>
+      <figcaption>
+        <span lang="en"><strong>Figure 1.</strong> Unlike static build-then-reason offline memory, Sprout watches segments lazily at low FPS, sprouts high-FPS detailed child nodes only where needed, releases raw video frames once recorded as text, and carries the evolving memory tree across subsequent questions.</span>
+        <span lang="zh"><strong>图 1.</strong> 相比传统“先离线建库、后静态推理”的流程，Sprout 在回答问题的同时惰性分段浏览，仅在关键区间以高帧率生长细粒度子节点，记入文本后立即释放原始视频帧并跨问题持续复用。</span>
+      </figcaption>
+    </figure>
+
+    <div class="stat-strip">
+      <div class="stat-box"><b>Zero Upfront</b><span lang="en">No offline full-video memory pre-construction</span><span lang="zh">免去全片离线预建库开销</span></div>
+      <div class="stat-box"><b>Dynamic Tree</b><span lang="en">Coarse-to-fine memory persists &amp; grows across QA</span><span lang="zh">跨问题持续生长与更新的时序记忆树</span></div>
+      <div class="stat-box"><b>Frame Release</b><span lang="en">Replaces accumulated frames with lean text nodes</span><span lang="zh">文本入库后释放视频帧显著压缩上下文</span></div>
+    </div>
+
+    <section id="abstract">
+      <h2><span lang="en">Abstract</span><span lang="zh">摘要</span></h2>
+      <p lang="en">Long video understanding relies on video memory to overcome the context limits of multimodal large language models. Existing methods follow a build-then-reasoning pipeline: memory is built offline for the entire video, then reasoned over as a static source. In practice a long video is shared by several questions, and this pipeline is costly at both ends: with few questions, building memory for the whole video costs far more than answering them; with many questions, the memory is never updated, so what is learned while answering questions is lost to the next question.</p>
+      <p lang="en">We introduce <strong>Sprout</strong>, an agentic framework that builds memory while reasoning: a temporal tree that sprouts detailed nodes as questions are answered. The agent watches the video segment by segment at a low frame rate, stopping when the current question can be answered, remembers each segment as a coarse node of the tree, and revisits key intervals at a higher frame rate to refine the tree with recovered details. Once a segment is recorded as text, its video input is removed from the context history while the original video remains reachable through video tools. Across benchmarks on three models, Sprout achieves competitive or improved accuracy relative to representative offline memory methods with no upfront construction stage and lower context cost per question.</p>
+      <p lang="zh">现有长视频记忆方法普遍遵循“先离线建库、再静态推理”管线：问题少时全片建库成本过高，问题多时记忆又无法随推理持续更新。本文提出 <strong>Sprout</strong> 智能体框架，在推理过程中动态构建时序记忆树：按低帧率逐段观看并在可作答时提前停止，将已看片段记为粗粒度节点，对关键区间按高帧率复看并生长细粒度子节点；文本入库后立即从上下文释放对应视频输入，同时将记忆树与历史问答跨问题持久化。在三个模型与多项基准上，Sprout 无需前置建库即可取得优于或持平代表性离线记忆方法的准确率，且每题上下文成本显著降低。</p>
+    </section>
+
+    <section id="findings">
+      <h2><span lang="en">Key Highlights</span><span lang="zh">核心亮点</span></h2>
+      <ol class="ar-findings">
+        <li>
+          <div>
+            <strong class="finding-head"><span lang="en">Online memory construction without upfront full-video indexing</span><span lang="zh">免前置离线建库的在线动态记忆</span></strong>
+            <span lang="en">Segments are watched lazily at low FPS and stopped as soon as the question is answerable, avoiding wasted indexing on unseen parts of hour-long videos.</span>
+            <span lang="zh">按低帧率分段按需浏览、满足作答即停止，彻底避免在未涉及的视频片段上浪费预索引开销。</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong class="finding-head"><span lang="en">Frame release keeps long-horizon agent context compact</span><span lang="zh">帧释放机制大幅降低多轮上下文膨胀</span></strong>
+            <span lang="en">Removing raw video frames after writing textual memory nodes cuts accumulated visual tokens substantially while preserving full accuracy—and even improving performance in several settings.</span>
+            <span lang="zh">将已看片段压缩为文本节点后立即从上下文移除原始视频帧，既显著降低上下文开销又保持乃至提升准确率。</span>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="citation">
+      <h2><span lang="en">Citation</span><span lang="zh">引用格式</span></h2>
+      <pre><code>@article{keyevideo2026sprout,
+  title   = {Sprout: Building Dynamic Memory While Reasoning for Agentic Video Understanding},
+  author  = {Keye Video Team},
+  journal = {arXiv preprint arXiv:2609.35497},
+  year    = {2026},
+  url     = {https://arxiv.org/abs/2609.35497}
+}</code></pre>
+    </section>
+  </div>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="foot-grid">
+    <div><div class="foot-brand"><img src="../assets/keye-logo.png" alt="Keye Video logo" width="28" height="28"><span>Keye Video Team</span></div><p class="foot-desc">Research on multimodal video understanding, native architectures, agentic harnesses, and evaluation benchmarks.</p></div>
+    <div class="foot-col"><h4>Recent</h4><ul><li><a href="../vibevideoagent/index.html">VibeVideoAgent</a></li><li><a href="../clve/index.html">CLVE</a></li><li><a href="../early-in-fusion/index.html">Early In-Fusion</a></li><li><a href="../videoace/index.html">VideoACE</a></li><li><a href="../rethinking-video-agents/index.html">Rethinking Video Agents</a></li></ul></div>
+    <div class="foot-col"><h4>More Papers</h4><ul><li><a href="../videonexus/index.html">VideoNexus</a></li><li><a href="../sprout/index.html">Sprout</a></li><li><a href="../deltavid/index.html">DELTAVID</a></li><li><a href="../vcap/index.html">VCap</a></li><li><a href="../spatialreward/index.html">SpatialReward</a></li></ul></div>
+    <div class="foot-col"><h4>Links</h4><ul><li><a href="../index.html">Team Homepage</a></li><li><a href="https://arxiv.org/abs/2609.35497" target="_blank" rel="noopener">arXiv:2609.35497</a></li><li><a href="https://github.com/Keye-Video" target="_blank" rel="noopener">GitHub Organization</a></li></ul></div>
+  </div>
+  <div class="foot-bottom"><span>© 2026 Keye Video Team.</span><span>keye-video.github.io/sprout/</span></div>
+</footer>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>
