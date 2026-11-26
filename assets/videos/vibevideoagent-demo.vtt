@@ -1,0 +1,97 @@
+WEBVTT
+
+1
+00:00:02.360 --> 00:00:04.760
+VibeVideoAgent: closing the perceptual loop
+
+2
+00:00:04.760 --> 00:00:06.634
+for code-driven video generation.
+
+3
+00:00:07.143 --> 00:00:10.776
+Vibe Video lets coding agents write the programs behind a video.
+
+4
+00:00:10.776 --> 00:00:13.722
+But exit code zero says nothing about what viewers see.
+
+5
+00:00:13.722 --> 00:00:15.809
+Raw frames flood the coder's context.
+
+6
+00:00:15.809 --> 00:00:17.929
+and late critique forces full rewrites.
+
+7
+00:00:18.493 --> 00:00:21.032
+Our key insight: decouple seeing from coding.
+
+8
+00:00:21.032 --> 00:00:23.543
+Short-lived perception workers inspect each draft
+
+9
+00:00:23.543 --> 00:00:25.999
+and return compact. grounded Findings.
+
+10
+00:00:25.999 --> 00:00:29.257
+so the coder can check early. without drowning in pixels.
+
+11
+00:00:29.710 --> 00:00:30.765
+Here's a real run.
+
+12
+00:00:30.765 --> 00:00:32.685
+The agent plans from quoted requirements
+
+13
+00:00:32.685 --> 00:00:35.464
+and tests its riskiest shot on a six-second preview.
+
+14
+00:00:35.464 --> 00:00:37.305
+On the rough cut. a check fails:
+
+15
+00:00:37.305 --> 00:00:39.013
+the elders aren't holding hands.
+
+16
+00:00:39.013 --> 00:00:41.077
+After a patch. the re-check passes.
+
+17
+00:00:41.077 --> 00:00:43.845
+while compare_media flags a fix that never landed.
+
+18
+00:00:43.845 --> 00:00:46.836
+Finally. a local probe confirms a seamless loop.
+
+19
+00:00:47.593 --> 00:00:50.227
+On all 239 VibeVideoBench tasks.
+
+20
+00:00:50.227 --> 00:00:52.816
+holistic quality improves for every coding agent.
+
+21
+00:00:52.816 --> 00:00:54.468
+up to +0.40.
+
+22
+00:00:54.468 --> 00:00:56.811
+with the largest gains in audio-visual sync.
+
+23
+00:00:57.510 --> 00:00:58.799
+VibeVideoAgent.
+
+24
+00:00:58.799 --> 00:01:00.221
+See what you render.

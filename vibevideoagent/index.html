@@ -23,7 +23,8 @@
     <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span class="burger"></span></button>
     <nav class="nav" aria-label="Primary navigation">
       <a href="../index.html">Home</a>
-      <a class="active" href="#overview">Overview</a>
+      <a class="active" href="#demo">Demo</a>
+      <a href="#overview">Overview</a>
       <a href="#architecture">Method</a>
       <a href="#results">Results</a>
       <a href="#trajectory">Trajectory</a>
@@ -59,10 +60,17 @@
     <div class="ar-authors-block">
       <div class="ar-affiliation"><strong>Keye Video Team</strong></div>
     </div>
+
+    <div class="ar-actions">
+      <a class="pill-btn solid" href="#demo">▶ Watch Demo (1:01)</a>
+      <a class="pill-btn primary" href="#results">Main Results</a>
+      <a class="pill-btn" href="#trajectory">Repair Trajectory</a>
+    </div>
   </header>
 
   <nav class="ar-toc" aria-label="Contents">
     <ol>
+      <li><a href="#demo"><span lang="en">Video Demo</span><span lang="zh">视频演示</span></a></li>
       <li><a href="#overview"><span lang="en">Overview</span><span lang="zh">概览</span></a></li>
       <li><a href="#abstract"><span lang="en">Abstract</span><span lang="zh">摘要</span></a></li>
       <li><a href="#architecture"><span lang="en">Architecture</span><span lang="zh">框架设计</span></a></li>
@@ -76,6 +84,7 @@
       <div class="ar-side">
         <div class="ar-side-title"><span lang="en">Contents</span><span lang="zh">目录</span></div>
         <ol>
+          <li><a href="#demo"><span lang="en">Video Demo</span><span lang="zh">视频演示</span></a></li>
           <li><a href="#overview"><span lang="en">Overview</span><span lang="zh">概览</span></a></li>
           <li><a href="#abstract"><span lang="en">Abstract</span><span lang="zh">摘要</span></a></li>
           <li><a href="#architecture"><span lang="en">Architecture</span><span lang="zh">框架设计</span></a></li>
@@ -84,6 +93,19 @@
         </ol>
       </div>
     </aside>
+
+    <figure class="ar-video-fig" id="demo">
+      <div class="ar-video-frame">
+        <video controls playsinline preload="metadata" poster="../assets/videos/vibevideoagent-poster.jpg" aria-label="VibeVideoAgent 1-minute narrated introduction and real W0448 closed-loop repair demo">
+          <source src="../assets/videos/vibevideoagent-demo.mp4" type="video/mp4">
+          <track kind="captions" src="../assets/videos/vibevideoagent-demo.vtt" srclang="en" label="English">
+        </video>
+      </div>
+      <figcaption>
+        <span lang="en"><strong>Video Demo (1:01).</strong> Narrated walkthrough of VibeVideoAgent—from decoupled perception workers and seven MCP primitives to a real closed-loop repair trajectory on VibeVideoBench task <code>W0448</code> (Claude Opus 5.5).</span>
+        <span lang="zh"><strong>视频演示（1:01）。</strong> VibeVideoAgent 全程解说与实录演示：展示解耦感知工作器、七大 MCP 制作原语，以及在 VibeVideoBench 任务 <code>W0448</code> 上的真实闭环修复轨迹。</span>
+      </figcaption>
+    </figure>
 
     <figure class="ar-fig" id="overview">
       <div class="ar-fig-frame" data-zoom>

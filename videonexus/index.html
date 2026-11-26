@@ -23,7 +23,8 @@
     <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span class="burger"></span></button>
     <nav class="nav" aria-label="Primary navigation">
       <a href="../index.html">Home</a>
-      <a class="active" href="#overview">Overview</a>
+      <a class="active" href="#demo">Demo</a>
+      <a href="#overview">Architecture</a>
       <a href="#findings">Highlights</a>
       <a href="#citation">Citation</a>
       <a class="nav-cta" href="https://arxiv.org/abs/2611.21392v1" target="_blank" rel="noopener">arXiv</a>
@@ -36,7 +37,7 @@
   <header class="ar-head" id="main" tabindex="-1">
     <div class="ar-crumb"><b><a href="../index.html">Keye Video Team</a></b><span>›</span><span>VideoNexus</span></div>
     <div class="ar-eyebrow">
-      <span>Nov 16, 2026</span>
+      <span>Nov 2026</span>
       <span class="badge">arXiv:2611.21392v1</span>
       <span class="badge badge-soft">Video Agents</span>
       <div class="ar-lang" role="group" aria-label="Language">
@@ -57,8 +58,9 @@
     </div>
 
     <div class="ar-actions">
-      <a class="pill-btn solid" href="https://arxiv.org/abs/2611.21392v1" target="_blank" rel="noopener">arXiv Paper →</a>
-      <a class="pill-btn primary" href="https://arxiv.org/pdf/2611.21392v1" target="_blank" rel="noopener">PDF</a>
+      <a class="pill-btn solid" href="#demo">▶ Watch Demo (1:00)</a>
+      <a class="pill-btn primary" href="https://arxiv.org/abs/2611.21392v1" target="_blank" rel="noopener">arXiv Paper →</a>
+      <a class="pill-btn" href="https://arxiv.org/pdf/2611.21392v1" target="_blank" rel="noopener">PDF</a>
       <a class="pill-btn" href="https://github.com/Keye-Video" target="_blank" rel="noopener">GitHub</a>
       <a class="pill-btn" href="#citation">BibTeX</a>
     </div>
@@ -66,6 +68,7 @@
 
   <nav class="ar-toc" aria-label="Contents">
     <ol>
+      <li><a href="#demo"><span lang="en">Video Demo</span><span lang="zh">视频演示</span></a></li>
       <li><a href="#overview"><span lang="en">Architecture</span><span lang="zh">架构</span></a></li>
       <li><a href="#abstract"><span lang="en">Abstract</span><span lang="zh">摘要</span></a></li>
       <li><a href="#findings"><span lang="en">Highlights</span><span lang="zh">核心亮点</span></a></li>
@@ -78,6 +81,7 @@
       <div class="ar-side">
         <div class="ar-side-title"><span lang="en">Contents</span><span lang="zh">目录</span></div>
         <ol>
+          <li><a href="#demo"><span lang="en">Video Demo</span><span lang="zh">视频演示</span></a></li>
           <li><a href="#overview"><span lang="en">Architecture</span><span lang="zh">架构</span></a></li>
           <li><a href="#abstract"><span lang="en">Abstract</span><span lang="zh">摘要</span></a></li>
           <li><a href="#findings"><span lang="en">Highlights</span><span lang="zh">核心亮点</span></a></li>
@@ -85,6 +89,18 @@
         </ol>
       </div>
     </aside>
+
+    <figure class="ar-video-fig" id="demo">
+      <div class="ar-video-frame">
+        <video controls playsinline preload="metadata" poster="../assets/videos/videonexus-poster.jpg" aria-label="VideoNexus 1-minute narrated walkthrough and long-video evidence demo">
+          <source src="../assets/videos/videonexus-demo.mp4" type="video/mp4">
+        </video>
+      </div>
+      <figcaption>
+        <span lang="en"><strong>Video Demo (1:00).</strong> How VideoNexus decouples native audio-video perception from the planner reasoning context—gathering compact, time-stamped evidence across hour-long videos to reach 88.6% on full LVBench at 44% API cost.</span>
+        <span lang="zh"><strong>视频演示（1:00）。</strong> 演示 VideoNexus 如何将原生音视频感知与规划器推理上下文彻底解耦，在小时级长视频中按需抽取带时间戳锚定的紧凑证据，以 44% 成本在完整 LVBench 取得 88.6% 准确率。</span>
+      </figcaption>
+    </figure>
 
     <figure class="ar-fig" id="overview">
       <div class="ar-fig-frame" data-zoom>
