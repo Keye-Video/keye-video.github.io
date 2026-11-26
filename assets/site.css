@@ -614,19 +614,41 @@ section.journal:last-of-type { padding-bottom: clamp(68px, 8.5vw, 104px); }
 }
 @media (max-width: 600px) { .log li { grid-template-columns: 84px minmax(0, 1fr); gap: 12px; } }
 
-/* 5. 团队成员网格 */
+/* 5. 团队成员网格（极简扁平链接卡片、不分角色） */
 .people-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-  gap: 14px 24px;
-  margin-bottom: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
 }
 .person-card {
-  padding: 16px 0 12px;
-  border-top: 2px solid var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  color: var(--ink);
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
-.person-name { font-size: 16.5px; font-weight: 700; color: var(--ink); }
-.person-role { font-size: 13.5px; color: var(--ink-3); margin-top: 3px; }
+.person-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--brand);
+  background: #FFFFFF;
+  box-shadow: 0 10px 24px rgba(34, 25, 22, 0.06);
+}
+.person-name { font-size: 16.5px; font-weight: 700; color: var(--ink); line-height: 1.25; }
+.person-arrow {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink-4);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.person-card:hover .person-arrow {
+  color: var(--accent);
+  transform: translate(2px, -2px);
+}
 
 .collab-band {
   display: flex;
