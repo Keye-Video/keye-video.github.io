@@ -97,6 +97,63 @@
     }, { passive: true });
   });
 
+  /* 2e. 演示视频可视区智能自动播放（静音循环 + 一键开声胶囊） */
+  var autoVideos = document.querySelectorAll('video[data-auto-video]');
+  if (autoVideos.length) {
+    var vidList = Array.prototype.slice.call(autoVideos);
+    vidList.forEach(function (v) {
+      v.muted = true;
+      v.loop = true;
+      v.playsInline = true;
+      var box = v.parentElement;
+      if (box && !box.querySelector('.vid-sound-btn')) {
+        var sbtn = document.createElement('button');
+        sbtn.type = 'button';
+        sbtn.className = 'vid-sound-btn';
+        sbtn.setAttribute('aria-pressed', 'false');
+        sbtn.textContent = 'Sound: OFF';
+        sbtn.addEventListener('click', function (ev) {
+          ev.stopPropagation();
+          var turnOn = v.muted;
+          if (turnOn) {
+            vidList.forEach(function (other) {
+              if (other !== v) {
+                other.muted = true;
+                var ob = other.parentElement && other.parentElement.querySelector('.vid-sound-btn');
+                if (ob) { ob.setAttribute('aria-pressed', 'false'); ob.textContent = 'Sound: OFF'; }
+              }
+            });
+          }
+          v.muted = !turnOn;
+          if (turnOn && v.paused) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+          sbtn.setAttribute('aria-pressed', String(turnOn));
+          sbtn.textContent = turnOn ? 'Sound: ON' : 'Sound: OFF';
+        });
+        v.addEventListener('volumechange', function () {
+          var on = !v.muted && v.volume > 0;
+          sbtn.setAttribute('aria-pressed', String(on));
+          sbtn.textContent = on ? 'Sound: ON' : 'Sound: OFF';
+        });
+        box.appendChild(sbtn);
+      }
+    });
+
+    if ('IntersectionObserver' in window) {
+      var vidIo = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          var v = entry.target;
+          if (entry.isIntersecting) {
+            var p = v.play();
+            if (p && p.catch) p.catch(function () {});
+          } else {
+            if (!v.paused) v.pause();
+          }
+        });
+      }, { threshold: 0.25 });
+      vidList.forEach(function (v) { vidIo.observe(v); });
+    }
+  }
+
   /* 3. 中英双语切换 */
   var langBtns = document.querySelectorAll('.ar-lang button[data-lang]');
   function setLang(lang) {
