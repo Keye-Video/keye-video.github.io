@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://keye-video.github.io/sitemap.xml
